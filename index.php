@@ -15,6 +15,13 @@ $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);
 
-$conn = new mysqli($server, $username, $password, $db) or die("Database failed!");
+$conn = new mysqli($server, $username, $password, $db);
 
-echo"database";
+if(mysqli_connect_errno()){
+    echo"Failed to connect database!";
+}
+else{
+    echo"Connected to databse!";
+}
+
+echo"......";
