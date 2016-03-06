@@ -87,7 +87,7 @@ echo"......2";
 			<td><a href="./pages/index.html">Eesti</a></td>
 			<td><a href="./pages/englishindex.html">English</a></td>
 	</tr></table>
-<div/>
+</div>
 
 <div id="contentcontainer">
 	<div id="logininfo"><p>Siia tuleb lühike selgitav tekst sisselogimisest, valimisest vms, võibolla pilt taustaks.</p><p>tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst</p><p>tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst-tekst</p></div>
