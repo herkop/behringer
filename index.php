@@ -33,7 +33,10 @@ else{
     echo "Database in!";
 }
 $result = pg_query($db, "CREATE TABLE User (ID int NOT NULL AUTO_INCREMENT, name VARCHAR(30))");
-echo "a".pg_result_error($result);
+echo "a";
+if(!$result){
+    echo"er1";
+}
 $result1 = pq_query($db, "INSERT INTO user (name) VALUES name='Karavan'");
 echo "b".pg_result_error($result1);
 $result2 = pq_query($db, "SELECT ID, name FROM user");
