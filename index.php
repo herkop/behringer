@@ -54,7 +54,7 @@ echo "a";
 //if(!$result){
 //    echo"er1";
 //}
-$result1 = pg_query($db, "INSERT INTO LOGS (ID, LOG) VALUES (1, 'lisatud')");
+$result1 = pg_query($db, "INSERT INTO LOGS (ID, LOG) VALUES (2, 'lisatud')");
 echo "b";
 if(!$result1){
    echo"er2";
@@ -65,7 +65,7 @@ if(!$result2){
     echo"er3";
 }
 while($row = pg_fetch_assoc($result2)){
-    echo $row[0]." ".$row[1]."<br>";
+    echo $row['ID']." ".$row['LOG']."<br>";
 }
 pg_close($db);
 echo"......2";
