@@ -8,7 +8,7 @@
 
 echo"Hello world!";
 
-$url = parse_url(getenv("postgres://kmeuaardudjwqp:qUyoFbXt78mblu_CEcezXhgCxw@ec2-54-227-250-148.compute-1.amazonaws.com:5432/d7fdmpdh0nvpmu"));
+$url = parse_url(getenv("postgres://urkzjhkrnsmmma:vilUq5-DOJ831Ukdg42HPeFf-b@ec2-107-20-148-211.compute-1.amazonaws.com:5432/d93bm3dnngfcgt"));
 
 $server = $url["host"];
 $username = $url["user"];
@@ -25,4 +25,4 @@ else{
     echo"Connected to databse!";
 }
 
-echo"......1";
+echo"......2";
