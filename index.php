@@ -6,7 +6,7 @@
  * Time: 12:44
  */
 
-echo"Hello world!3";
+echo"Hello world!1";
 /**
 $url = parse_url(getenv("postgres://mcnptqegvzaixb:lGS_pncoLTlIx5DzMybQxA4_R2@ec2-54-247-167-90.eu-west-1.compute.amazonaws.com:5432/d8m5d1ggv02dvb"));
 
@@ -32,7 +32,7 @@ if(!$db){
 else{
     echo "Database in!";
 }
-$result = pg_query($db, "CREATE TABLE User (ID int NOT NULL AUTO_INCREMENT, name VARCHAR(30))");
+$result = pg_query($db, "CREATE TABLE Logs (ID int NOT NULL AUTO_INCREMENT, log VARCHAR(30))");
 echo "a";
 if(!$result){
     echo"er1";
