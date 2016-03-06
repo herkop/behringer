@@ -32,7 +32,7 @@ if(!$db){
 else{
     echo "Database in!";
 }
-
+/**
 $sql =<<<EOF
       CREATE TABLE COMPANY
       (ID INT PRIMARY KEY     NOT NULL,
@@ -48,8 +48,8 @@ if(!$ret){
     echo "Table created successfully\n";
 }
 pg_close($db);
-/**
-$result = pg_query($db, "CREATE TABLE IF NOT EXISTS 'Logs' ('ID' int NOT NULL AUTO_INCREMENT, 'log' VARCHAR(30))");
+*/
+$result = pg_query($db, "CREATE TABLE IF NOT EXISTS LOGS (ID INT PRIMARY KEY NOT NULL, LOG VARCHAR(30))");
 echo "a";
 if(!$result){
     echo"er1";
@@ -61,5 +61,5 @@ echo "c".pg_result_error($result2);
 while($row = pg_fetch_assoc($result2)){
     echo $row['ID']." ".$row['name']."<br>";
 }
-*/
+pg_close($db);
 echo"......3";
