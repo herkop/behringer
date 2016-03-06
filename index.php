@@ -6,7 +6,7 @@
  * Time: 12:44
  */
 
-echo"Hello world!";
+echo"Hello world!2";
 
 $url = parse_url(getenv("postgres://mcnptqegvzaixb:lGS_pncoLTlIx5DzMybQxA4_R2@ec2-54-247-167-90.eu-west-1.compute.amazonaws.com:5432/d8m5d1ggv02dvb"));
 
