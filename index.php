@@ -54,12 +54,12 @@ echo "a";
 //if(!$result){
 //    echo"er1";
 //}
-$result1 = pg_query($db, "INSERT INTO LOGS (ID, LOG) VALUES (2, 'lisatud')");
+//$result1 = pg_query($db, "INSERT INTO LOGS (ID, LOG) VALUES (2, 'lisatud')");
 echo "b";
-if(!$result1){
-   echo"er2";
-}
-$result2 = pg_query($db, "SELECT ID, LOG FROM LOGS");
+//if(!$result1){
+//   echo"er2";
+//}
+$result2 = pg_query($db, "SELECT * FROM LOGS");
 echo "c";
 if(!$result2){
     echo"er3";
