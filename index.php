@@ -7,7 +7,7 @@
  */
 
 echo"Hello world!2";
-
+/**
 $url = parse_url(getenv("postgres://mcnptqegvzaixb:lGS_pncoLTlIx5DzMybQxA4_R2@ec2-54-247-167-90.eu-west-1.compute.amazonaws.com:5432/d8m5d1ggv02dvb"));
 
 $server = $url["host"];
@@ -24,7 +24,7 @@ if(mysqli_connect_errno()){
 else{
     echo"Connected to databse!";
 }
-
+*/
 $db = pg_connect("dbname=d8m5d1ggv02dvb host=ec2-54-247-167-90.eu-west-1.compute.amazonaws.com port=5432 user=mcnptqegvzaixb password=lGS_pncoLTlIx5DzMybQxA4_R2 sslmode=require");
 if(!$db){
     echo "Database con error";
