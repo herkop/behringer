@@ -49,14 +49,14 @@ if(!$ret){
 }
 pg_close($db);
 */
-$result = pg_query($db, "CREATE TABLE IF NOT EXISTS LOGS (ID INT PRIMARY KEY NOT NULL, LOG VARCHAR(30))");
+//result = pg_query($db, "CREATE TABLE IF NOT EXISTS LOGS (ID INT PRIMARY KEY NOT NULL, LOG VARCHAR(30))");
 echo "a";
-if(!$result){
-    echo"er1";
-}
-$result1 = pq_query($db, "INSERT INTO user (name) VALUES name='Karavan'");
+//if(!$result){
+//    echo"er1";
+//}
+$result1 = pq_query($db, "INSERT INTO LOGS (LOG) VALUES LOG='lisatud'");
 echo "b".pg_result_error($result1);
-$result2 = pq_query($db, "SELECT ID, name FROM user");
+$result2 = pq_query($db, "SELECT ID, LOG FROM LOGS");
 echo "c".pg_result_error($result2);
 while($row = pg_fetch_assoc($result2)){
     echo $row['ID']." ".$row['name']."<br>";
