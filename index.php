@@ -10,10 +10,10 @@ echo"Hello world!";
 
 $url = parse_url(getenv("postgres://kmeuaardudjwqp:qUyoFbXt78mblu_CEcezXhgCxw@ec2-54-227-250-148.compute-1.amazonaws.com:5432/d7fdmpdh0nvpmu"));
 
-$server = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$db = substr($url["path"], 1);
+$server = "ec2-54-227-250-148.compute-1.amazonaws.com";
+$username = "kmeuaardudjwqp";
+$password = "qUyoFbXt78mblu_CEcezXhgCxw";
+$db = "d7fdmpdh0nvpmu";
 
 $conn = new mysqli($server, $username, $password, $db);
 
@@ -24,4 +24,4 @@ else{
     echo"Connected to databse!";
 }
 
-echo"......";
+echo"......2";
