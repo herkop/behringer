@@ -65,7 +65,7 @@ if(!$result2){
     echo"er3";
 }
 while($row = pg_fetch_assoc($result2)){
-    echo $row['ID']." ".$row['LOG']."<br>";
+    echo $row["ID"]." ".$row["LOG"]."<br>";
 }
 pg_close($db);
 echo"......2";
