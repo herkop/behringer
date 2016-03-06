@@ -32,4 +32,11 @@ if(!$db){
 else{
     echo "Database in!";
 }
+$result = pg_query($db, "CREATE table user(ID int NOT NULL AUTO_INCREMENT, name VARCHAR(30))");
+$result1 = pq_query($db, "INSERT INTO user (name) VALUES name='Karavan'");
+$result2 = pq_query($db, "SELECT ID, name FROM user");
+while($row = mysqli_fetch_assoc($result2)){
+    echo $row['ID']." ".$row['name']."<br>";
+}
+
 echo"......3";
