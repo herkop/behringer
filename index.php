@@ -32,12 +32,12 @@ if(!$db){
 else{
     echo "Database in!";
 }
-//$result = pg_query($db, "CREATE table user(ID int NOT NULL AUTO_INCREMENT, name VARCHAR(30))");
-//echo pg_result_error($result);
-// = pq_query($db, "INSERT INTO user (name) VALUES name='Karavan'");
-//echo pg_result_error($result1);
+$result = pg_query($db, "CREATE table user(ID int NOT NULL AUTO_INCREMENT, name VARCHAR(30))");
+echo "a".pg_result_error($result);
+$result1 = pq_query($db, "INSERT INTO user (name) VALUES name='Karavan'");
+echo "b".pg_result_error($result1);
 $result2 = pq_query($db, "SELECT ID, name FROM user");
-echo pg_result_error($result2);
+echo "c".pg_result_error($result2);
 while($row = pg_fetch_assoc($result2)){
     echo $row['ID']." ".$row['name']."<br>";
 }
