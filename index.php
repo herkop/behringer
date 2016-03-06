@@ -54,7 +54,7 @@ echo "a";
 //if(!$result){
 //    echo"er1";
 //}
-$result1 = pg_query($db, "INSERT INTO LOGS (ID, LOG) VALUES ID=1, LOG='lisatud'");
+$result1 = pg_query($db, "INSERT INTO LOGS (LOG) VALUES ('lisatud')");
 echo "b";
 if(!$result1){
    echo"er2";
