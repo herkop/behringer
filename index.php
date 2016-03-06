@@ -32,7 +32,7 @@ if(!$db){
 else{
     echo "Database in!";
 }
-$result = pg_query($db, "CREATE TABLE Logs (ID int NOT NULL AUTO_INCREMENT, log VARCHAR(30))");
+$result = pg_query($db, "CREATE TABLE IF NOT EXISTS 'Logs' (ID int NOT NULL AUTO_INCREMENT, log VARCHAR(30))");
 echo "a";
 if(!$result){
     echo"er1";
