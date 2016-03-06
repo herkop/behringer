@@ -59,7 +59,7 @@ echo "b".pg_result_error($result1);
 $result2 = pg_query($db, "SELECT ID, LOG FROM LOGS");
 echo "c".pg_result_error($result2);
 while($row = pg_fetch_assoc($result2)){
-    echo $row['ID']." ".$row['name']."<br>";
+    echo $row['ID']." ".$row['LOG']."<br>";
 }
 pg_close($db);
 echo"......3";
