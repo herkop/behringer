@@ -84,7 +84,7 @@ echo"......2";
 			<td><a href="./pages/textpage.html">Valimistest</a></td>
 			<td><a href="./pages/kandidaadid.html">Kandidaatide nimekiri</a></td>
 			<td><a href="./pages/textpage.html">Abi</a></td>
-			<td><a href="./pages/index.html">Eesti</a></td>
+			<td><a href="./">Eesti</a></td>
 			<td><a href="./pages/englishindex.html">English</a></td>
 	</tr></table>
 </div>
