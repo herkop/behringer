@@ -55,9 +55,15 @@ echo "a";
 //    echo"er1";
 //}
 $result1 = pg_query($db, "INSERT INTO LOGS (ID, LOG) VALUES ID=1, LOG='lisatud'");
-echo "b".pg_result_error($result1);
+echo "b";
+if(!$result1){
+   echo"er2";
+}
 $result2 = pg_query($db, "SELECT ID, LOG FROM LOGS");
-echo "c".pg_result_error($result2);
+echo "c";
+if(!$result2){
+    echo"er3";
+}
 while($row = pg_fetch_assoc($result2)){
     echo $row['ID']." ".$row['LOG']."<br>";
 }
