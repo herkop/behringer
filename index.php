@@ -1,28 +1,5 @@
 <?php
-include ("./data/config.php");
-$result = pg_query($db, "CREATE TABLE IF NOT EXISTS CANDIDATES (
-      ID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-      Firstname VARCHAR(30) NOT NULL,
-      Lastname VARCHAR(30) NOT NULL,
-      Party VARCHAR(30) NOT NULL,)");
-echo "a";
-if(!$result){
-    echo"er1";
-}
-//$result1 = pg_query($db, "INSERT INTO LOGS (ID, LOG) VALUES (2, 'lisatud')");
-echo "b";
-//if(!$result1){
-//   echo"er2";
-//}
-//$result2 = pg_query($db, "SELECT * FROM LOGS");
-echo "c";
-//if(!$result2){
-//    echo"er3";
-//}
-//while($row = pg_fetch_assoc($result2)){
-//    echo $row["id"] . " " . $row["log"] . "<br>";
-//}
-pg_close($db);
+
 ?>
 <head>
     <title>E-Hääletus</title>
