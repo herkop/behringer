@@ -33,12 +33,12 @@ else{
     echo "Database in!";
 }
 $result = pg_query($db, "CREATE table user(ID int NOT NULL AUTO_INCREMENT, name VARCHAR(30))");
-echo $result;
+echo pg_result_error($result);
 $result1 = pq_query($db, "INSERT INTO user (name) VALUES name='Karavan'");
-echo $result1;
+echo pg_result_error($result1);
 $result2 = pq_query($db, "SELECT ID, name FROM user");
-echo $result2;
-while($row = mysqli_fetch_assoc($result2)){
+echo pg_result_error($result2);
+while($row = pg_fetch_assoc($result2)){
     echo $row['ID']." ".$row['name']."<br>";
 }
 
