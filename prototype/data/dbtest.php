@@ -1,8 +1,8 @@
 <?php
 
 echo"test";
-include("config.php");
-
+//include("config.php");
+$db = true;
 if($db2){
     echo "You are in!";
 }
