@@ -1,11 +1,11 @@
 <?php
 
 echo"test";
-//include("config.php");
-$db = true;
-if($db2){
+include("config.php");
+
+if($db){
     echo "You are in!";
 }
 else{
-    echo "You are nor in!";
+    echo "You are not in!";
 }
