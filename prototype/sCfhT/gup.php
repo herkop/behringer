@@ -6,7 +6,7 @@ if($_POST["run"]){
 
 ?>
 
-<form action="" name="data">
+<form action="" method="post" name="data">
     <label>Tekst siia:</label>
 <textarea name="sentence"></textarea>
 <input value="Run" type="submit" name="run">
