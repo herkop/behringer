@@ -9,6 +9,6 @@ if($_POST["run"]){
 <form action="" name="data">
     <label>Tekst siia:</label>
 <textarea name="sentence"></textarea>
-<input value="Run" name="run">
+<input value="Run" type="submit" name="run">
     <div ><?php echo $comment;?></div>
 </form>
