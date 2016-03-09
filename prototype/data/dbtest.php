@@ -1,5 +1,6 @@
 <?php
 
+echo"test";
 include("config.php");
 
 if($db2){
