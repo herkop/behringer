@@ -9,3 +9,4 @@ $mysql_password = "lGS_pncoLTlIx5DzMybQxA4_R2";
 $mysql_database = "d8m5d1ggv02dvb";
 $db = mysqli_connect($mysql_hostname, $mysql_user, $mysql_password, $mysql_database, $mysql_port)or die("Opps some thing went wrong");
 //mysqli_select_db($mysql_database, $bd)or die("Opps some thing went wrong");
+echo mysqli_connect_error();
