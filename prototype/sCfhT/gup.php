@@ -18,15 +18,15 @@ if($_POST["run"]){
         $row = pg_fetch_all($result);
 
     }
-    else{
+
         $error = pg_result_error($result);
-    }
+
 }
 
 ?>
 
 <form action="" method="post" name="data">
-    <label>Tekst siia1:</label>
+    <label>Tekst siia:</label>
 <textarea name="sentence"><?php echo $comment?></textarea>
 <input value="Run" type="submit" name="run">
     <div ><br>Query: <?php echo $comment;?><br>
