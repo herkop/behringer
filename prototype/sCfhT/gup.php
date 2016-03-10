@@ -1,5 +1,5 @@
 <?php
-include("/prototype/data/config.php");
+include("prototype/data/config.php");
 if($db){
     echo "Ühendus olemas!";
 }
