@@ -27,7 +27,7 @@ if($_POST["run"]){
 
 <form action="" method="post" name="data">
     <label>Tekst siia:</label>
-<textarea name="sentence"></textarea>
+<textarea name="sentence"><?php echo $comment?></textarea>
 <input value="Run" type="submit" name="run">
     <div ><br>Query: <?php echo $comment;?><br>
     Info: <?php echo $error; ?><br>
