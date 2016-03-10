@@ -19,7 +19,7 @@ if($_POST["run"]){
 
     }
     else{
-        $error = pg_result_error($db);
+        $error = pg_result_error($result);
     }
 }
 
