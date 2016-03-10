@@ -16,6 +16,7 @@ if($_POST["run"]){
     $result = pg_query($db, $comment);
     if($result){
         $row = pg_fetch_all($result);
+
     }
     else{
         $error = pg_result_error($db);
@@ -30,6 +31,6 @@ if($_POST["run"]){
 <input value="Run" type="submit" name="run">
     <div ><br>Query: <?php echo $comment;?><br>
     Info: <?php echo $error; ?><br>
-    Answer: <?php echo $row; ?></div>
+    Answer: <?php echo $row; print_r($row);?></div>
 
 </form>
