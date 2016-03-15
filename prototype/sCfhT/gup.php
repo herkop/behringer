@@ -24,13 +24,13 @@ if($_POST["run"]){
         $err = "Failed!";
     }
 
-        $error = pg_last_error($result);
+        $error = pg_last_error($db);
 }
 pg_close($db);
 ?>
 
 <form action="" method="post" name="data">
-    <label>Tekst siia:</label>
+    <label>Tekst siia1:</label>
 <textarea name="sentence"><?php echo $comment?></textarea>
 <input value="Run" type="submit" name="run">
     <div ><br>Query: <?php echo $comment;?><br>
