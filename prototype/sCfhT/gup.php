@@ -21,7 +21,7 @@ if($_POST["run"]){
 
     }
     else{
-        $err = "Failed!"
+        $err = "Failed!";
     }
 
         $error = pg_result_error($result);
