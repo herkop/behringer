@@ -11,19 +11,20 @@ else{
 $comment = "";
 $error = "";
 $row = "";
+$err = "";
 if($_POST["run"]){
     $comment = $_POST["sentence"];
     $result = pg_query($db, $comment);
     if($result){
         $row = pg_fetch_all($result);
-        $error = "Successfully crested!";
+        $err = "Successfully crested!";
 
     }
     else{
-        $error = "Failed!"
+        $err = "Failed!"
     }
 
-        $error .= pg_result_error($result);
+        $error = pg_result_error($result);
 
 }
 
@@ -34,7 +35,7 @@ if($_POST["run"]){
 <textarea name="sentence"><?php echo $comment?></textarea>
 <input value="Run" type="submit" name="run">
     <div ><br>Query: <?php echo $comment;?><br>
-    Info: <?php echo $error; ?><br>
+    Info: <?php echo $err . "; " . $error; ?><br>
     Answer: <?php echo $row; print_r($row);?></div>
 
 </form>
