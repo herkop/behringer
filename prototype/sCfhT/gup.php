@@ -16,6 +16,7 @@ if($_POST["run"]){
     $result = pg_query($db, $comment);
     if($result){
         $row = pg_fetch_all($result);
+        $error = "Successfully crested!";
 
     }
 
