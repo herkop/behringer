@@ -15,7 +15,7 @@ if($_POST["new_voting"]){
 }
 ?>
 
-<form action="" method="post", name="create_voting">
+<form action="" method="post" name="create_voting">
     <span><?php echo $voting_error; ?></span>
     <b>Pealkiri: </b><br>
     <input type="text" name="title"><br>
