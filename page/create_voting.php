@@ -10,8 +10,8 @@ if($_POST["new_voting"]){
     $finish_date = $_POST["finish_date"];
     $finish_time = $_POST["finish_time"];
     if($title && $start_date && $start_time && $finish_date && $finish_time){
-        $start = date("d.m.Y H:i", strtotime($start_date." ".$start_time));
-        $finish = date("d.m.Y H:i", strtotime($finish_date." ".$finish_time));
+        $start = strtotime($start_date." ".$start_time);
+        $finish = strtotime($finish_date." ".$finish_time);
             if($db){
                 $result = pg_connect($db, "INSERT INTO voting (title, person, start_date, finish_date) VALUES ('" . $title . "', '" . $person . "', '" . $start . "', '" . $finish . "')");
                 if($result){
