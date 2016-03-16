@@ -18,7 +18,7 @@ if($_POST["new_voting"]){
                     $voting_error = "Lisaud!";
                 }
                 else{
-                    $voting_error = "Lisamata!".pg_last_error($db);
+                    $voting_error = "Lisamata!".pg_last_error();
                 }
                 pg_close($db);
             }
