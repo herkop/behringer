@@ -1,4 +1,3 @@
-<div id="contentcontainer">
 	<div id="logininfo"><p></p></div>
 	<div id="loginfields">
 		<div id="togglebuttons">
@@ -8,9 +7,11 @@
 		</div>
 		<form action="./loggedin.html">
 			<br><br>
+			<b>Kasutajanimi: </b>
+			<input type="text" name="username">
 			<b>Salasõna: </b><br>
-			<input type="text"></input><br><br>
-			<input type="submit" value="Autendi"></input>
+			<input type="password" name="password"><br><br>
+			<input type="submit" value="Autendi">
 		</form>
 	</div>
-</div>
+
