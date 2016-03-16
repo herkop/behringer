@@ -1,18 +1,19 @@
 <?php
-if($db){
-    echo"SUCCES";
-}
+
 $voting_error = "";
 if($_POST["new_voting"]){
+    $person = 1;
     $title = $_POST["title"];
     $start_date = $_POST["start_date"];
     $start_time = $_POST["start_time"];
     $finish_date = $_POST["finish_date"];
     $finish_time = $_POST["finish_time"];
     if($title && $start_date && $start_time && $finish_date && $finish_time){
-        $start = strtotime($start_date." ".$start_time);
-        $test = date("d.m.Y H:i:s", $start);
-        $voting_error = $start . "; " . $test;
+        $start = date("d.m.Y H:i", strtotime($start_date." ".$start_time));
+        $finish = date("d.m.Y H:i", strtotime($finish_date." ".$finish_time));
+            if($db){
+                $result = pg_connect($db, "INSERT INTO voting (title, person, start_date, finish_date) VALUES ($title, $person, $start, $finish)");
+            }
     }
     else{
         $voting_error = "Kõik väljad peavad olema täidetud!";
