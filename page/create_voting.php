@@ -13,6 +13,12 @@ if($_POST["new_voting"]){
         $finish = date("d.m.Y H:i", strtotime($finish_date." ".$finish_time));
             if($db){
                 $result = pg_connect($db, "INSERT INTO voting (title, person, start_date, finish_date) VALUES ($title, $person, $start, $finish)");
+                if($result){
+                    $voting_error = "Lisaud!";
+                }
+                else{
+                    $voting_error = "Lisamata!";
+                }
             }
     }
     else{
