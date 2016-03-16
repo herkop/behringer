@@ -1,4 +1,7 @@
 <?php
+if($db){
+    echo"SUCCES";
+}
 $voting_error = "";
 if($_POST["new_voting"]){
     $title = $_POST["title"];
