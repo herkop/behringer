@@ -3,11 +3,11 @@
 ?>
 
 <form action="" method="post", name="create_voting">
-    <b>Pealkiri: </b>
-    <input type="text" name="title">
-    <b>Algus aeg:</b>
-    <input type="datetime" name="start_datetime">
-    <b>Lõpu aeg:</b>
-    <input type="datetime" name="finish_datetime">
+    <b>Pealkiri: </b><br>
+    <input type="text" name="title"><br>
+    <b>Algus aeg:</b><br>
+    <input type="date" name="start_datetime"><br>
+    <b>Lõpu aeg:</b><br>
+    <input type="time" name="finish_datetime"><br>
     <input type="submit" name="new_voting">
 </form>
