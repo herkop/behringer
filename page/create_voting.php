@@ -12,7 +12,7 @@ if($_POST["new_voting"]){
         $start = date("d.m.Y H:i", strtotime($start_date." ".$start_time));
         $finish = date("d.m.Y H:i", strtotime($finish_date." ".$finish_time));
             if($db){
-                $result = pg_connect($db, "INSERT INTO voting (title, person, start_date, finish_date) VALUES ($title, $person, $start, $finish)");
+                $result = pg_connect($db, "INSERT INTO voting (title, person, start_date, finish_date) VALUES ('" . $title . "', '" . $person . "', '" . $start . "', '" . $finish . "')");
                 if($result){
                     $voting_error = "Lisaud!";
                 }
