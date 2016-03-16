@@ -7,7 +7,9 @@ if($_POST["new_voting"]){
     $finish_date = $_POST["finish_date"];
     $finish_time = $_POST["finish_time"];
     if($title && $start_date && $start_time && $finish_date && $finish_time){
-
+        $start = strtotime($start_date." ".$start_time);
+        $test = date("d.m.Y H:i:s", $start);
+        $voting_error = $start . "; " . $test;
     }
     else{
         $voting_error = "Kõik väljad peavad olema täidetud!";
@@ -16,7 +18,7 @@ if($_POST["new_voting"]){
 ?>
 
 <form action="" method="post" name="create_voting">
-    <span><?php echo $voting_error; ?></span>
+    <span><?php echo $voting_error; ?></span><br>
     <b>Pealkiri: </b><br>
     <input type="text" name="title"><br>
     <b>Algus aeg:</b><br>
