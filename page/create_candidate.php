@@ -1,22 +1,43 @@
 <?php
+$candidate_error = "";
+$firstname = "";
+$lastname = "";
+$voting = "";
+if($_POST["add_candidate"]){
+    $firstname = $_POST["firstname"];
+    $lastname = $_POST["lastname"];
+    $voting = $_POST["voting"];
 
+    if($firstname && $lastname && $voting){
+
+    }
+    else{
+       $candidate_error = "Kõik väljad peavad olema täidetud!";
+    }
+}
 ?>
 
 <form name="create_candidate">
+    <span><?php echo $candidate_error;?></span>
     <b>Kandidaadid eesnimi:</b><br>
-    <input type="text" name="firstname"><br>
+    <input type="text" name="firstname" value="<?php echo $firstname;?>"><br>
     <b>Kandidaadi perenimi:</b><br>
-    <input type="text" name="lastname"><br>
+    <input type="text" name="lastname" value="<?php echo $lastname;?>"><br>
     <b>Hääletus:</b><br>
     <select name="voting">
-        <option value="0" selected="selected" disabled="disabled">Vali</option>
+        <option value="0" <?php if(!$voting)echo"selected='selected'"?> disabled="disabled">Vali</option>
         <?php
         if($db){
             $result = pg_query($db, "SELECT * FROM voting");
             while($row = pg_fetch_assoc($result)){
                 $id = $row["id"];
                 $title = $row["title"];
-                echo"<option value='$id'>$title</option>";
+                if($voting == $id) {
+                    echo "<option value='$id' selected='selected'>$title</option>";
+                }
+                else{
+                    echo "<option value='$id'>$title</option>";
+                }
             }
             pg_close($db);
         }
