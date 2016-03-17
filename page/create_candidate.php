@@ -17,7 +17,7 @@ if($_POST["add_candidate"]){
 }
 ?>
 
-<form name="create_candidate">
+<form name="create_candidate" method="post" action="">
     <span><?php echo $candidate_error;?></span>
     <b>Kandidaadid eesnimi:</b><br>
     <input type="text" name="firstname" value="<?php echo $firstname;?>"><br>
