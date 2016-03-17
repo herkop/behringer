@@ -18,6 +18,7 @@ if($_POST["new_voting"]){
         $start = date("d.m.Y H:i:s", strtotime($start_date." ".$start_time));
         $finish = date("d.m.Y H:i:s", strtotime($finish_date." ".$finish_time));
             if($db){
+
                 $result = pg_query($db, "INSERT INTO voting(title, person, start_date, finish_date) VALUES('" . $title . "', '" . $person . "', '" . $start . "', '" . $finish . "')");
                 if($result){
                     $voting_error = "Lisaud!";
@@ -42,5 +43,5 @@ if($_POST["new_voting"]){
     <input type="date" name="start_date" value="<?php echo $start_date;?>"><input type="time" name="start_time" value="<?php echo $start_time?>"><br>
     <b>Lõpu aeg:</b><br>
     <input type="date" name="finish_date" value="<?php echo $finish_date?>"><input type="time" name="finish_time" value="<?php echo $finish_time;?>"><br>
-    <input type="submit" name="new_voting">
+    <input type="submit" name="new_voting" value="Lisa">
 </form>
