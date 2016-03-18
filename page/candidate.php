@@ -31,5 +31,9 @@
     }
     $er = "ffffffffffffffff".pg_last_error($db);
     ?>
-<tr><td>mindagi</td><td>fhyht</td><td>rthtrh</td></tr>
+    <tr>
+        <td>Mari Mets</td>
+        <td>Kollased</td>
+        <td>1</td>
+    </tr>
 </table>
