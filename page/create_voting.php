@@ -2,11 +2,12 @@
 include "../data/config.php";
 session_start();
 $logged_user = pg_escape_string($_SESSION["login_user"]);
-
+$id = "";
 if($db){
-    $res = pg_query($db, "SELECT username FROM person WHERE username ='".$logged_user."'");
+    $res = pg_query($db, "SELECT id, username FROM person WHERE username ='".$logged_user."'");
     $rw = pg_fetch_assoc($res);
     $user = $rw["username"];
+    $id = $rw["id"];
 
 }
 
@@ -23,7 +24,7 @@ $finish_date = "";
 $finish_time = "";
 if($_POST["new_voting"]){
 
-    $person = $logged_user;
+    $person = 1;
     $title = $_POST["title"];
     $start_date = pg_escape_string($_POST["start_date"]);
     $start_time = pg_escape_string($_POST["start_time"]);
