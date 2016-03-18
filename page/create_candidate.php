@@ -4,6 +4,7 @@ $firstname = "";
 $lastname = "";
 $voting = "";
 if($_POST["add_candidate"]){
+    require "../data/config.php";
     $firstname = $_POST["firstname"];
     $lastname = $_POST["lastname"];
     $voting = $_POST["voting"];
@@ -19,6 +20,7 @@ if($_POST["add_candidate"]){
                 $candidate_error = "Lisamata! ".pg_last_error($db);
             }
             pg_close($db);
+
         }
 
     }
@@ -29,7 +31,7 @@ if($_POST["add_candidate"]){
 ?>
 
 <form name="create_candidate" method="post" action="">
-    <span><?php echo $candidate_error;?></span>
+    <span><?php echo $candidate_error;?></span><br>
     <b>Kandidaadid eesnimi:</b><br>
     <input type="text" name="firstname" value="<?php echo $firstname;?>"><br>
     <b>Kandidaadi perenimi:</b><br>
