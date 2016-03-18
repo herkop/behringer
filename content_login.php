@@ -27,6 +27,7 @@ if(!isset($user)) {
 					$login_error = "õige!";
 					session_start();
 					$_SESSION["login_user"] = $username;
+					header("Location: /");
 				} else {
 					$login_error = "Kasutajanimi ja/või parool on vale(d)!";
 				}
@@ -61,8 +62,15 @@ if(!isset($user)) {
 	</div>
 	<?php
 }else{ ?>
+	<div id="logininfo"><p>
+			Sisse loginutele:
+			<a href="?page=create_voting">Lisa valimine</a>
+			<a href="?page=create_candidate">Lisa kandidaat</a>
+		</p></div>
+	<div id="loginfields">
 <b>Oled sisse loginud, <?php echo $logged_user;?></b>
 	<a href="data/logout.php">Logi välja</a>
+	</div>
 <?php
 }
 	?>
