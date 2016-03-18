@@ -22,7 +22,10 @@
                 <td>$votenumber</td>
                 </tr>";
         }
+        $er = pg_last_error($db);
+        pg_close($db);
     }
     ?>
 
 </table>
+<?php echo $er;?>
