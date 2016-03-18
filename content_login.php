@@ -1,4 +1,8 @@
-	<div id="logininfo"><p></p></div>
+	<div id="logininfo"><p>
+			Sisse loginutele:
+			<a href="?page=create_voting">Lisa valimine</a>
+			<a href="?page=create_candidate">Lisa kandidaat</a>
+		</p></div>
 	<div id="loginfields">
 		<div id="togglebuttons">
 			<button class="togglebtn">ID-Kaart</button><!--
