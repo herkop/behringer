@@ -25,7 +25,7 @@ if($_POST["select_voting"]) {
                         echo "<option value='$id'>$title</option>";
                     }
                 }
-                //pg_close($db);
+
             }
 
             ?>
@@ -51,7 +51,7 @@ if($_POST["select_voting"]) {
 
                 if ($db) {
                     $err="vvvvvvvvvvvvvvv";
-                    $result1 = pg_query($db, "SELECT firstname, lastname, voting, votenumber, party FROM candidate");
+                    $result1 = pg_query($db, "SELECT firstname, lastname, voting, votenumber, party FROM candidate WHERE voting=$voting");
                     while ($row = pg_fetch_assoc($result1)) {
                         $firstname = $row["firstname"];
                         $lastname = $row["lastname"];
@@ -65,13 +65,14 @@ if($_POST["select_voting"]) {
                 </tr>";
                     }
                     echo pg_last_error($db);
-                    pg_close($db);
+
                 }
                 ?>
 
             </table>
             <?php
-echo $err;
+
     }
+pg_close($db);
 ?>
         </form>
