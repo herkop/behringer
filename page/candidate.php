@@ -11,7 +11,9 @@ if($_POST["select_voting"]) {
 <select name="voting">
     <option value="0" <?php if(!$voting)echo"selected='selected'"?> disabled="disabled">Vali</option>
     <?php
+
     if($db){
+
         $result = pg_query($db, "SELECT * FROM voting");
         while($row = pg_fetch_assoc($result)){
             $id = $row["id"];
@@ -33,7 +35,7 @@ if($_POST["select_voting"]) {
     </form>
 <?php
 
-        $voting = 1;
+
         if($voting) {
 
 
@@ -48,7 +50,7 @@ if($_POST["select_voting"]) {
 
 
                 if ($db) {
-                    $result = pg_query($db, "SELECT firstname, lastname, voting, votenumber, party FROM candidate WHERE voting = " .$voting);
+                    $result = pg_query($db, "SELECT firstname, lastname, voting, votenumber, party FROM candidate WHERE voting = '" .$voting. "'");
                     while ($row = pg_fetch_assoc($result)) {
                         $firstname = $row["firstname"];
                         $lastname = $row["lastname"];
