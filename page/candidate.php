@@ -25,7 +25,7 @@ if($_POST["select_voting"]) {
                         echo "<option value='$id'>$title</option>";
                     }
                 }
-                pg_close($db);
+                //pg_close($db);
             }
 
             ?>
