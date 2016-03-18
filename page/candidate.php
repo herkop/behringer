@@ -32,10 +32,10 @@ if($_POST["select_voting"]) {
 
         </select>
         <input type="submit" name="select_voting" value="Vali">
-
+</form>
 <?php
 
-        $voting = 1;
+
         if($voting) {
 
 
@@ -75,4 +75,4 @@ if($_POST["select_voting"]) {
     }
 pg_close($db);
 ?>
-        </form>
+
