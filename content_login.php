@@ -8,13 +8,13 @@ include "data/config.php";
 		if($username && $password){
 			if($db){
 				$result = pg_query($db, "SELECT password FROM person WHERE username=$username");
-				$row = mysqli_fetch_assoc($result);
+				$row = pg_fetch_assoc($result);
 
 				if(hash("sha256", $password) == $row["password"]){
 					$login_error = "õige!";
 				}
 				else{
-					$login_error = "Kasutajanimi ja/või parool on vale(d)!$password";
+					$login_error = "Kasutajanimi ja/või parool on vale(d)!";
 				}
 			}
 		}
