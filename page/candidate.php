@@ -31,6 +31,5 @@
     }
     $er = "ffffffffffffffff".pg_last_error($db);
     ?>
-
+<tr><td><?php echo $er;?></td><td></td><td></td></tr>
 </table>
-<?php echo $er;?>
