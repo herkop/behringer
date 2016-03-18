@@ -12,7 +12,7 @@ include "data/config.php";
 					$login_error = "õige!";
 				}
 				else{
-					$login_error = "Kasutajanimi ja/või parool on vale(d)!";
+					$login_error = hash("sha256", $password);
 				}
 			}
 		}
