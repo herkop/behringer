@@ -36,7 +36,7 @@ if($_POST["add_candidate"]){
                 $party = "";
                 $candidate_error = "Lisatud!";
             }
-            pg_close($db);
+
 
         }
 
@@ -71,7 +71,7 @@ if($_POST["add_candidate"]){
                     echo "<option value='$id'>$title</option>";
                 }
             }
-            pg_close($db);
+
         }
 
         ?>
@@ -80,4 +80,5 @@ if($_POST["add_candidate"]){
     <input type="submit" name="add_candidate" value="Lisa">
 
 </form>
-<?php }?>
+<?php }
+pg_close($db);?>
