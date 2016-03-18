@@ -6,7 +6,7 @@ $logged_user = $_SESSION["login_user"];
 if($db){
     $res = pg_query($db, "SELECT username FROM person WHERE username ='".$username."'");
     $rw = pg_fetch_assoc($res);
-    $user = $_SESSION["username"];
+    $user = $rw["username"];
 
 }
 
