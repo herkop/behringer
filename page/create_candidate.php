@@ -10,7 +10,7 @@ if($_POST["add_candidate"]){
     $lastname = $_POST["lastname"];
     $voting = $_POST["voting"];
     $party = $_POST["party"];
-    if($firstname && $lastname && $voting){
+    if($firstname && $lastname && $voting && $party){
 
         if($db){
             $result = pg_query($db, "INSERT INTO candidate(firstname, lastname, votenumber, voting, party) VALUES('" .$firstname."', '" .$lastname. "', nextval('vote_number'), '" .$voting. "', '" .$party."')");
