@@ -35,7 +35,7 @@ if($_POST["new_voting"]){
         $finish = date("d.m.Y H:i:s", strtotime($finish_date." ".$finish_time));
             if($db){
 
-                $result = pg_query($db, "INSERT INTO voting(title, person, start_date, finish_date) VALUES('" . $title . "', '" . $person . "', '" . $start . "', '" . $finish . "')");
+                $result = pg_query($db, "INSERT INTO voting(title, person, start_date, finish_date) VALUES('" . $title . "', '" . $id . "', '" . $start . "', '" . $finish . "')");
                 if($result){
                     $title = "";
                     $start_date ="";
