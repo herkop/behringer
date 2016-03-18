@@ -25,6 +25,9 @@
         $er = pg_last_error($db);
         pg_close($db);
     }
+    else{
+        $er = "fail";
+    }
     ?>
 
 </table>
