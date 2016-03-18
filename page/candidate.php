@@ -50,7 +50,7 @@ if($_POST["select_voting"]) {
 
 
                 if ($db) {
-                    $result = pg_query($db, "SELECT firstname, lastname, voting, votenumber, party FROM candidate WHERE voting=1");
+                    $result = pg_query($db, "SELECT firstname, lastname, voting, votenumber, party FROM candidate WHERE voting='1'");
                     while ($row = pg_fetch_assoc($result)) {
                         $firstname = $row["firstname"];
                         $lastname = $row["lastname"];
