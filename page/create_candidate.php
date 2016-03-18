@@ -1,4 +1,19 @@
 <?php
+include "../data/config.php";
+session_start();
+$logged_user = pg_escape_string($_SESSION["login_user"]);
+
+if($db){
+    $res = pg_query($db, "SELECT username FROM person WHERE username ='".$logged_user."'");
+    $rw = pg_fetch_assoc($res);
+    $user = $rw["username"];
+
+}
+
+if(!isset($user)){
+    echo "<span class='error'>Selle lehe nägemiseks pead olema sisse loginud</span>";
+}
+else{
 $candidate_error = "";
 $firstname = "";
 $lastname = "";
@@ -65,3 +80,4 @@ if($_POST["add_candidate"]){
     <input type="submit" name="add_candidate" value="Lisa">
 
 </form>
+<?php }?>
