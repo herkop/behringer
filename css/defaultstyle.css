@@ -27,8 +27,16 @@ table {
 }
 
 input[type=text]{
+	 color: #000000;
+	 background-color: #FFFFFF;
+	 border: 1px solid #555555;
+	 border-radius: 3px;
+	 padding: 3px;
+ }
+
+input[type=password]{
 	color: #000000;
-	background-color: #FFFFFF; 
+	background-color: #FFFFFF;
 	border: 1px solid #555555;
 	border-radius: 3px;
 	padding: 3px;
