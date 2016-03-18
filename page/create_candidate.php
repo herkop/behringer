@@ -3,7 +3,7 @@ $candidate_error = "";
 $firstname = "";
 $lastname = "";
 $voting = "";
-require "../data/config.php";
+include "../data/config.php";
 if($_POST["add_candidate"]){
     $firstname = $_POST["firstname"];
     $lastname = $_POST["lastname"];
