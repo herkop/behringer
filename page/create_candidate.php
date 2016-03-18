@@ -7,8 +7,19 @@ if($_POST["add_candidate"]){
     $firstname = $_POST["firstname"];
     $lastname = $_POST["lastname"];
     $voting = $_POST["voting"];
-
+    $votenumber = 100;
     if($firstname && $lastname && $voting){
+
+        if($db){
+            $result = pg_query($db, "INSERT INTO candidate(firstname, lastname, votenumber, voting) VALUES('" .$firstname."', '" .$lastname. "', nextval('vote_number'), '" .$voting. "')");
+            if($result){
+                $candidate_error = "Lisatud!";
+            }
+            else{
+                $candidate_error = "Lisamata! ".pg_last_error($db);
+            }
+            pg_close($db);
+        }
 
     }
     else{
