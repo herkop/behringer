@@ -21,10 +21,10 @@ $voting = "";
 $party = "";
 include "../data/config.php";
 if($_POST["add_candidate"]){
-    $firstname = $_POST["firstname"];
-    $lastname = $_POST["lastname"];
-    $voting = $_POST["voting"];
-    $party = $_POST["party"];
+    $firstname = pg_escape_string($_POST["firstname"]);
+    $lastname = pg_escape_string($_POST["lastname"]);
+    $voting = pg_escape_string($_POST["voting"]);
+    $party = pg_escape_string($_POST["party"]);
     if($firstname && $lastname && $voting && $party){
 
         if($db){

@@ -23,12 +23,12 @@ $finish_date = "";
 $finish_time = "";
 if($_POST["new_voting"]){
 
-    $person = 1;
+    $person = $logged_user;
     $title = $_POST["title"];
-    $start_date = $_POST["start_date"];
-    $start_time = $_POST["start_time"];
-    $finish_date = $_POST["finish_date"];
-    $finish_time = $_POST["finish_time"];
+    $start_date = pg_escape_string($_POST["start_date"]);
+    $start_time = pg_escape_string($_POST["start_time"]);
+    $finish_date = pg_escape_string($_POST["finish_date"]);
+    $finish_time = pg_escape_string($_POST["finish_time"]);
     if($title && $start_date && $start_time && $finish_date && $finish_time){
         $start = date("d.m.Y H:i:s", strtotime($start_date." ".$start_time));
         $finish = date("d.m.Y H:i:s", strtotime($finish_date." ".$finish_time));
