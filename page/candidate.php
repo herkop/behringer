@@ -25,7 +25,7 @@ include "../data/config.php";
     ?>
 
 </select>
-<input type="submit" name="select_voting">
+<input type="submit" name="select_voting" value="Vali">
     </form>
 <?php
     if($_POST["select_voting"]) {
