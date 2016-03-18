@@ -7,10 +7,10 @@ include "data/config.php";
 
 		if($username && $password){
 			if($db){
-				$result = pg_query($db, "SELECT password FROM person WHERE username=$username");
+				$result = pg_query($db, "SELECT password FROM person WHERE username = '".$username."'");
 				$row = pg_fetch_assoc($result);
-
-				if(hash("sha256", $password) == $row["password"]){
+				$passworddb = $row["password"];
+				if(hash("sha256", $password) == $passworddb){
 					$login_error = "õige!";
 				}
 				else{
