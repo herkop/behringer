@@ -1,4 +1,19 @@
 <?php
+include "../data/config.php";
+session_start();
+$logged_user = $_SESSION["login_user"];
+
+if($db){
+    $res = pg_query($db, "SELECT username FROM person WHERE username ='".$username."'");
+    $rw = pg_fetch_assoc($res);
+    $user = $_SESSION["username"];
+
+}
+
+if(!isset($user)){
+    echo "<span class='error'>Selle lehe nägemiseks pead olema sisse loginud</span>";
+}
+else{
 
 $voting_error = "";
 $title = "";
@@ -7,7 +22,7 @@ $start_time = "";
 $finish_date = "";
 $finish_time = "";
 if($_POST["new_voting"]){
-    include "../data/config.php";
+
     $person = 1;
     $title = $_POST["title"];
     $start_date = $_POST["start_date"];
@@ -47,3 +62,4 @@ if($_POST["new_voting"]){
     <input type="date" name="finish_date" value="<?php echo $finish_date?>"><input type="time" name="finish_time" value="<?php echo $finish_time;?>"><br>
     <input type="submit" name="new_voting" value="Lisa">
 </form>
+<?php }?>
