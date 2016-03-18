@@ -7,7 +7,7 @@ $start_time = "";
 $finish_date = "";
 $finish_time = "";
 if($_POST["new_voting"]){
-    require "../data/config.php";
+    include "../data/config.php";
     $person = 1;
     $title = $_POST["title"];
     $start_date = $_POST["start_date"];
@@ -21,10 +21,12 @@ if($_POST["new_voting"]){
 
                 $result = pg_query($db, "INSERT INTO voting(title, person, start_date, finish_date) VALUES('" . $title . "', '" . $person . "', '" . $start . "', '" . $finish . "')");
                 if($result){
+                    $title = "";
+                    $start_date ="";
+                    $start_time = "";
+                    $finish_date = "";
+                    $finish_time = "";
                     $voting_error = "Lisaud!";
-                }
-                else{
-                    $voting_error = "Lisamata!".pg_last_error();
                 }
                 pg_close($db);
             }

@@ -6,7 +6,7 @@
         <td><b>Number</b></td>
     </tr>
     <?php
-    //require "../data/config.php";
+    include "../data/config.php";
 
     if($db) {
         $result = pg_query($db, "SELECT firstname, lastname, voting, votenumber, party FROM candidate");

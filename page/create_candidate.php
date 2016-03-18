@@ -3,21 +3,23 @@ $candidate_error = "";
 $firstname = "";
 $lastname = "";
 $voting = "";
+$party = "";
 include "../data/config.php";
 if($_POST["add_candidate"]){
     $firstname = $_POST["firstname"];
     $lastname = $_POST["lastname"];
     $voting = $_POST["voting"];
-    $votenumber = 100;
+    $party = $_POST["party"];
     if($firstname && $lastname && $voting){
 
         if($db){
-            $result = pg_query($db, "INSERT INTO candidate(firstname, lastname, votenumber, voting) VALUES('" .$firstname."', '" .$lastname. "', nextval('vote_number'), '" .$voting. "')");
+            $result = pg_query($db, "INSERT INTO candidate(firstname, lastname, votenumber, voting, party) VALUES('" .$firstname."', '" .$lastname. "', nextval('vote_number'), '" .$voting. "', '" .$party."')");
             if($result){
+                $firstname = "";
+                $lastname = "";
+                $voting = "";
+                $party = "";
                 $candidate_error = "Lisatud!";
-            }
-            else{
-                $candidate_error = "Lisamata! ".pg_last_error($db);
             }
             pg_close($db);
 
@@ -36,6 +38,8 @@ if($_POST["add_candidate"]){
     <input type="text" name="firstname" value="<?php echo $firstname;?>"><br>
     <b>Kandidaadi perenimi:</b><br>
     <input type="text" name="lastname" value="<?php echo $lastname;?>"><br>
+    <b>Erakond</b><br>
+    <input type="text" name="party" value="<?php echo $party;?>"><br>
     <b>Hääletus:</b><br>
     <select name="voting">
         <option value="0" <?php if(!$voting)echo"selected='selected'"?> disabled="disabled">Vali</option>
