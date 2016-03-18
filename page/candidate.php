@@ -1,6 +1,9 @@
 <?
 include "../data/config.php";
 $voting = "";
+if($_POST["select_voting"]) {
+    $voting = $_POST["voting"];
+}
 ?>
 
 <b>Valimised:</b>
@@ -29,8 +32,7 @@ $voting = "";
 <input type="submit" name="select_voting" value="Vali">
     </form>
 <?php
-    if($_POST["select_voting"]) {
-        $voting = $_POST["voting"];
+
 
         if($voting) {
 
@@ -65,6 +67,6 @@ $voting = "";
                 ?>
             </table>
             <?php
-        }
+
     }
 ?>
