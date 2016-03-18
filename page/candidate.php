@@ -29,7 +29,7 @@
     else{
         $er = "fail";
     }
-    $er = pg_last_error($db);
+    $er = "ffffffffffffffff".pg_last_error($db);
     ?>
 
 </table>
