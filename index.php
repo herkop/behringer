@@ -1,5 +1,4 @@
 <!DOCTYPE html> <!--HTML 5: http://www.w3schools.com/tags/tag_doctype.asp -->
-<?php require "data/config.php";?>
 <?php require("header.php");?> 
 <?php require("banner.php");?>
 <div id="contentcontainer">
