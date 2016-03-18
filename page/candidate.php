@@ -9,6 +9,7 @@
     require "../data/config.php";
 
     if($db) {
+        $er = "tere";
         $result = pg_query($db, "SELECT firstname, lastname, voting, votenumber, party FROM candidate");
         while($row = pg_fetch_assoc($result)){
             $firstname = $row["firstname"];
