@@ -1,3 +1,6 @@
+<?
+include "../data/config.php";
+?>
 
 <b>Valimised:</b>
 <form method="post" action="" name="show_voting">
@@ -38,7 +41,7 @@
                     <td><b>Number</b></td>
                 </tr>
                 <?php
-                include "../data/config.php";
+
 
                 if ($db) {
                     $result = pg_query($db, "SELECT firstname, lastname, voting, votenumber, party FROM candidate WHERE voting = '" .$voting. "'");
