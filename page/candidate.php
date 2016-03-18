@@ -50,6 +50,7 @@ if($_POST["select_voting"]) {
 
 
                 if ($db) {
+                    $err="vvvvvvvvvvvvvvv";
                     $result = pg_query($db, "SELECT firstname, lastname, voting, votenumber, party FROM candidate WHERE voting='1'");
                     while ($row = pg_fetch_assoc($result)) {
                         $firstname = $row["firstname"];
@@ -67,8 +68,9 @@ if($_POST["select_voting"]) {
                     pg_close($db);
                 }
                 ?>
+
             </table>
             <?php
-
+echo $err;
     }
 ?>
