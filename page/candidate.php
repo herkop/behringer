@@ -48,7 +48,7 @@ if($_POST["select_voting"]) {
                 </tr>
                 <?php
 
-
+                include "../data/config.php";
                 if ($db) {
                     $result = pg_query($db, "SELECT firstname, lastname, voting, votenumber, party FROM candidate WHERE voting = '" .$voting. "'");
                     while ($row = pg_fetch_assoc($result)) {
