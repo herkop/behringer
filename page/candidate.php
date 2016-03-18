@@ -64,7 +64,7 @@ if($_POST["select_voting"]) {
                 <td>$votenumber</td>
                 </tr>";
                     }
-
+                    echo pg_last_error($db);
                     pg_close($db);
                 }
                 ?>
