@@ -1,5 +1,6 @@
 <?
 include "../data/config.php";
+$voting = "";
 ?>
 
 <b>Valimised:</b>
@@ -30,6 +31,7 @@ include "../data/config.php";
 <?php
     if($_POST["select_voting"]) {
         $voting = $_POST["voting"];
+
         if($voting) {
 
 
