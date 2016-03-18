@@ -25,7 +25,7 @@ if(!isset($user)) {
 				$passworddb = $row["password"];
 				if (hash("sha256", $password) == $passworddb) {
 					$login_error = "õige!";
-					session_start();
+					//session_start();
 					$_SESSION["login_user"] = $username;
 					header("Location: /");
 				} else {
