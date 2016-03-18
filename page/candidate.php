@@ -28,6 +28,7 @@
     else{
         $er = "fail";
     }
+    $er = pg_last_error($db);
     ?>
 
 </table>
