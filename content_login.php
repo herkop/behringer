@@ -44,10 +44,8 @@ if(!isset($user)) {
 		</p></div>
 	<div id="loginfields">
 		<div id="togglebuttons">
-			<button class="togglebtn">ID-Kaart</button><!--
-	 	 -->
-			<button class="togglebtn">Digi-ID</button><!--
-	 	 -->
+			<button class="togglebtn">ID-Kaart</button>
+			<button class="togglebtn">Digi-ID</button>
 			<button class="togglebtn">Mobiil-ID</button>
 		</div>
 		<form action="" method="post" name="login">
