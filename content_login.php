@@ -1,10 +1,10 @@
 <?php
 include "data/config.php";
 session_start();
-$logged_user = $_SESSION["login_user"];
+$logged_user = pg_escape_string($_SESSION["login_user"]);
 
 if($db){
-	$res = pg_query($db, "SELECT username FROM person WHERE username ='".$username."'");
+	$res = pg_query($db, "SELECT username FROM person WHERE username ='".$logged_user."'");
 	$rw = pg_fetch_assoc($res);
 	$user = $rw["username"];
 
