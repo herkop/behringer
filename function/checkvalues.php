@@ -1,6 +1,6 @@
 <?php
-
-require $_SERVER['DOCUMENT_ROOT']."data/config.php";
+define("SITE_ROOT", dirname(__FILE__));
+require SITE_ROOT."/../data/config.php";
 $title = $_POST["title"];
 
 
