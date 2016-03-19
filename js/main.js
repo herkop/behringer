@@ -30,7 +30,7 @@
             }
             else
             {
-                document.getElementById("titleck").innerHTML=title+" ei ole saadaval!";
+                document.getElementById("titleck").innerHTML=title+" ei ole saadaval!"+error;
             }
         });
     }
