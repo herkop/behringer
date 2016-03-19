@@ -2,7 +2,7 @@
 define("SITE_ROOT", dirname(__FILE__));
 require SITE_ROOT."/../data/config.php";
 $title = $_POST["title"];
-
+$data = $db;
 
 if(isset($title)){
     return findTitle($title);
@@ -10,11 +10,11 @@ if(isset($title)){
 
 
 function findTitle($title){
-    global $db;
+    global $data;
 
-    if($db){
+    if($data){
 
-        $result = pg_query($db, "SELECT title FROM voting WHERE title = '".$title."'");
+        $result = pg_query($data, "SELECT title FROM voting WHERE title = '".$title."'");
         $row = pg_fetch_assoc($result);
         if($row["title"]){
             return "error";
