@@ -4,4 +4,5 @@
     <style type="text/css">
     @import "./css/defaultstyle.css";
     </style>
+    <script src="/js/main.js"></script>
 </head>
