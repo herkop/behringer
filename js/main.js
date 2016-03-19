@@ -21,7 +21,7 @@
     function votingck(){
         var title = document.getElementsByName("title")[0].value;
 
-        $.post("/functions/checkvalues.php", {
+        $.post("/function/checkvalues.php", {
             title : title
         }).done(function(error){
             if(error.length==0)
