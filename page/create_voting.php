@@ -52,7 +52,7 @@ if($_POST["new_voting"]){
     }
 }
 ?>
-
+    <script src="/js/main.js"></script>
 <form action="" method="post" name="create_voting">
     <span><?php echo $voting_error; ?></span><br>
     <b>Pealkiri: </b><br>
