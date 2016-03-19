@@ -25,24 +25,25 @@ $finish_time = "";
 if($_POST["new_voting"]){
 
     $person = 1;
-    $title = $_POST["title"];
+    $title = pg_escape_string($_POST["title"]);
     $start_date = pg_escape_string($_POST["start_date"]);
     $start_time = pg_escape_string($_POST["start_time"]);
     $finish_date = pg_escape_string($_POST["finish_date"]);
     $finish_time = pg_escape_string($_POST["finish_time"]);
-    if($title && $start_date && $start_time && $finish_date && $finish_time){
-        $start = date("d.m.Y H:i:s", strtotime($start_date." ".$start_time));
-        $finish = date("d.m.Y H:i:s", strtotime($finish_date." ".$finish_time));
+    if($title && $start_date && $start_time && $finish_date && $finish_time) {
+        $start = date("d.m.Y H:i:s", strtotime($start_date . " " . $start_time));
+        $finish = date("d.m.Y H:i:s", strtotime($finish_date . " " . $finish_time));
 
-        if($start >= $finish){
+        if ($start >= $finish) {
             $voting_error = "Algus aeg ei tohi olla suurem lõpu ajast!";
-        }
-            if($db){
+        } else {
+
+            if ($db) {
 
                 $result = pg_query($db, "INSERT INTO voting(title, person, start_date, finish_date) VALUES('" . $title . "', '" . $id . "', '" . $start . "', '" . $finish . "')");
-                if($result){
+                if ($result) {
                     $title = "";
-                    $start_date ="";
+                    $start_date = "";
                     $start_time = "";
                     $finish_date = "";
                     $finish_time = "";
@@ -50,6 +51,7 @@ if($_POST["new_voting"]){
                 }
                 pg_close($db);
             }
+        }
     }
     else{
         $voting_error = "Kõik väljad peavad olema täidetud!";
@@ -58,7 +60,7 @@ if($_POST["new_voting"]){
 ?>
 
 <form action="" method="post" name="create_voting">
-    <span><?php echo $voting_error; ?></span><br>
+    <span id="titleck"><?php echo $voting_error; ?></span><br>
     <b>Pealkiri: </b><br>
     <input type="text" name="title" value="<?php echo $title;?>"><br>
     <b>Algus aeg:</b><br>
