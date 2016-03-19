@@ -5,7 +5,7 @@ $title = $_POST["title"];
 $data = $db;
 
 if(isset($title)){
-    return findTitle($title);
+    echo findTitle($title);
 }
 
 
