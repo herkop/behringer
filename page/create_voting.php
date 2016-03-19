@@ -34,12 +34,12 @@ if($_POST["new_voting"]){
         $start = date("d.m.Y H:i:s", strtotime($start_date." ".$start_time));
         $finish = date("d.m.Y H:i:s", strtotime($finish_date." ".$finish_time));
 
-        if($start > $finish){
+        if($start >= $finish){
             $voting_error = "Algus aeg ei tohi olla suurem lõpu ajast!";
         }
             if($db){
 
-                //$result = pg_query($db, "INSERT INTO voting(title, person, start_date, finish_date) VALUES('" . $title . "', '" . $id . "', '" . $start . "', '" . $finish . "')");
+                $result = pg_query($db, "INSERT INTO voting(title, person, start_date, finish_date) VALUES('" . $title . "', '" . $id . "', '" . $start . "', '" . $finish . "')");
                 if($result){
                     $title = "";
                     $start_date ="";
