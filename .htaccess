@@ -2,4 +2,4 @@ RewriteEngine On
 
 RewriteRule ^([^\.]+)$ /?page=$1
 
-RewriteRule ^([^\.]+)/([^\.]+) /?to=$1&action=$2
+#RewriteRule ^([^\.]+)/([^\.]+) /?to=$1&action=$2
