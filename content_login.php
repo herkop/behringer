@@ -13,7 +13,7 @@ if($db){
 if(!isset($user)) {
 	$to = "";
 	if(isset($_GET["to"])){
-		$to = $_GET["to"];
+		$to = "?page=".$_GET["to"];
 	}
 
 	$login_error = "";
