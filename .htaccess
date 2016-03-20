@@ -1,5 +1,5 @@
 RewriteEngine On
 
-RewriteRule ^([^\.]+)$ /?page=$1
+#RewriteRule ^([^\.]+)$ /?page=$1
 
-#RewriteRule ^([^\.]+)/([^\.]+) /?to=$1&action=$2
+RewriteRule ^([^\.]+)/([^\.]+) /?page=$1&to=$2
