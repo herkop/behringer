@@ -11,6 +11,8 @@ if (isset($_GET['page'])) {
 
         require('page/' . $_GET['page'] . '.php');
 
+    } else if($_GET['page'] = "login"){
+        require "content_login.php";
     } else {
 
         echo '<span class="error">Viga! Sellist lehte ei leidu!</span>';
