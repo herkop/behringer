@@ -1,6 +1,6 @@
 <?php
 define("SITE_ROOT", dirname(__FILE__));
-require "../data/config.php";
+require SITE_ROOT."/../data/config.php";
 if(isset($_POST["title"])) {
     $title = $_POST["title"];
     echo findTitle($title);
