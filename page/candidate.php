@@ -11,7 +11,6 @@ if($_POST["select_voting"]) {
         <select name="voting">
             <option value="0" <?php if(!$voting)echo"selected='selected'"?> disabled="disabled">Vali</option>
             <?php
-            $id = "";
             if($db){
 
                 $result = pg_query($db, "SELECT * FROM voting");
@@ -40,8 +39,8 @@ if($_POST["select_voting"]) {
             $candidateSum = 0;
             $voteSum = 0;
             if($db){
-                $res = pg_query($db, "SELECT sumOfCandadates($id)");
-                $candidateSum = pg_fetch_assoc($res);
+                $res = pg_query($db, "SELECT sumOfCandadates($voting)");
+                $candidateSum = pg_fetch_result($res, 0);
 
             }
 
