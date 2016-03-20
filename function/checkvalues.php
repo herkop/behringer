@@ -1,9 +1,8 @@
 <?php
 define("SITE_ROOT", dirname(__FILE__));
 require "../data/config.php";
-$title = $_POST["title"];
-
-if(isset($title)){
+if(isset($_POST["title"])) {
+    $title = $_POST["title"];
     echo findTitle($title);
 }
 
