@@ -4,10 +4,12 @@ require "../data/config.php";
 if(isset($_POST["title"])) {
     $title = $_POST["title"];
     echo findTitle($title);
+
 }
 
 
 function findTitle($title){
+    echo"TERE";
     global $db;
 
     if($db){
