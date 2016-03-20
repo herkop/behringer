@@ -64,7 +64,7 @@ if($_POST["new_voting"]){
     <b>Pealkiri: </b><br>
     <input type="text" name="title" value="<?php echo $title;?>"><br>
     <b>Algus aeg:</b><br>
-    <input type="date" name="start_date" id="voting_date" value="<?php echo $start_date;?>"><input type="time" name="start_time" value="<?php echo $start_time?>"><br>
+    <input type="date" name="start_date" value="<?php echo $start_date;?>"><input type="time" name="start_time" value="<?php echo $start_time?>"><br>
     <b>Lõpu aeg:</b><br>
     <input type="date" name="finish_date" value="<?php echo $finish_date?>"><input type="time" name="finish_time" value="<?php echo $finish_time;?>"><br>
     <input type="submit" name="new_voting" value="Lisa">

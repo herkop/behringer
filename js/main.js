@@ -2,8 +2,7 @@
         if (document.getElementsByName("start_date")[0] && document.getElementsByName("start_date")[0]) {
 
             var today = new Date().toISOString().split('T')[0];
-            //document.getElementsByName("start_date")[0].setAttribute('min', today);
-            document.getElementById("voting_date").setAttribute('min', today);
+            document.getElementsByName("start_date")[0].setAttribute('min', today);
             document.getElementsByName("finish_date")[0].setAttribute('min', today);
             document.getElementsByName("start_date")[0].addEventListener('change', changeDateSelect);
         }
@@ -30,7 +29,7 @@
             }
             else
             {
-                document.getElementById("titleck").innerHTML=title+" ei ole saadaval!"+error;
+                document.getElementById("titleck").innerHTML=title+" ei ole saadaval!";
             }
         });
     }
