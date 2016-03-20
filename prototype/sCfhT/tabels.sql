@@ -31,3 +31,13 @@ voting INT NOT NULL,
 vote BOOLEAN NOT NULL
 )
 
+CREATE FUNCTION sumOfCandidates(vote integer)
+RETURNS integer AS $total$
+declare
+	total integer;
+        vote integer;
+BEGIN
+   SELECT COUNT(*) into total FROM candidate WHERE voting = vote;
+   RETURN total;
+END;
+$total$ LANGUAGE plpgsql;
