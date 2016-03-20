@@ -38,8 +38,8 @@ if($_POST["new_voting"]){
         if ($start >= $finish) {
             $voting_error = "Algus aeg ei tohi olla suurem lõpu ajast!";
         } else {
-            echo "tere1";
-            if(findTitle($title) != null){
+            echo findTitle($title);
+            if(1 == 1){
                 echo "tere2";
                 $voting_error = "Antud pealkiri on juba kasutusel!";
             } else {

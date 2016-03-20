@@ -1,6 +1,6 @@
 <?php
-define("SITE_ROOT", dirname(__FILE__));
-require SITE_ROOT."/../data/config.php";
+
+require "../data/config.php";
 if(isset($_POST["title"])) {
     $title = $_POST["title"];
     echo findTitle($title);
@@ -9,7 +9,6 @@ if(isset($_POST["title"])) {
 
 
 function findTitle($title){
-    echo"TERE";
     global $db;
 
     if($db){
