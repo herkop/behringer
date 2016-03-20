@@ -3,13 +3,13 @@
 require "../data/config.php";
 if(isset($_POST["title"])) {
     $title = $_POST["title"];
-    echo findTitle($db, $title);
+    echo findTitle($title);
 
 }
 
 
-function findTitle($db, $title){
-
+function findTitle($title){
+    global $db;
     if($db){
 
         $result = pg_query($db, "SELECT title FROM voting WHERE title = '".$title."'");

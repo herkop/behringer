@@ -38,9 +38,9 @@ if($_POST["new_voting"]){
         if ($start >= $finish) {
             $voting_error = "Algus aeg ei tohi olla suurem lõpu ajast!";
         } else {
-            echo findTitle($db, $title);
-            if(1 == 1){
-                echo "tere2";
+            $result0 = pg_query($db, "SELECT title FROM voting WHERE title = '".$title."'");
+            $row0 = pg_fetch_assoc($result0);
+            if($row0["title"]){
                 $voting_error = "Antud pealkiri on juba kasutusel!";
             } else {
                 if ($db) {
