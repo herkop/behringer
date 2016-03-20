@@ -38,10 +38,11 @@ if($_POST["new_voting"]){
         if ($start >= $finish) {
             $voting_error = "Algus aeg ei tohi olla suurem lõpu ajast!";
         } else {
+            echo "tere1";
             if(findTitle($title) != null){
+                echo "tere2";
                 $voting_error = "Antud pealkiri on juba kasutusel!";
             } else {
-
                 if ($db) {
 
                     $result = pg_query($db, "INSERT INTO voting(title, person, start_date, finish_date) VALUES('" . $title . "', '" . $id . "', '" . $start . "', '" . $finish . "')");
