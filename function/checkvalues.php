@@ -3,13 +3,12 @@
 require "../data/config.php";
 if(isset($_POST["title"])) {
     $title = $_POST["title"];
-    echo findTitle($title);
+    echo findTitle($db, $title);
 
 }
 
 
-function findTitle($title){
-    global $db;
+function findTitle($db, $title){
 
     if($db){
 
