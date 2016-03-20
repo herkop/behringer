@@ -5,7 +5,7 @@ if($_POST["select_voting"]) {
     $voting = $_POST["voting"];
 }
 ?>
-
+<div class="candidateSelect">
     <b>Valimised:</b>
     <form method="post" action="" name="show_voting">
         <select name="voting">
@@ -32,6 +32,7 @@ if($_POST["select_voting"]) {
         </select>
         <input type="submit" name="select_voting" value="Vali">
 </form>
+</div>
 <?php
 
 
@@ -45,8 +46,8 @@ if($_POST["select_voting"]) {
             }
 
             ?>
-            <div>
-                Kandidaate kokku: <?php echo $candidateSum;?>
+            <div class="candidateInfo">
+                Kandidaate kokku: <?php echo $candidateSum;?><br>
                 Hääletanuid kokku: <?php echo $voteSum;?>
             </div>
             <table>

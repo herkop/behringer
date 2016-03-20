@@ -106,3 +106,13 @@ input[type=submit]{
 .error {
 	color: red;
 }
+
+.candidateSelect {
+	float: left;
+	margin: 10px;
+}
+
+.candidateInfo {
+	float: right;
+	margin: 10px;
+}
