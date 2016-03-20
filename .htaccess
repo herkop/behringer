@@ -1,4 +1,5 @@
 RewriteEngine On
 
-RewriteRule ^([^\.]+)$ /?page=$1
+
 RewriteRule ^login/([^\.]+) /?to=$1
+RewriteRule ^([^\.]+)$ /?page=$1
