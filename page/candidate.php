@@ -42,6 +42,8 @@ if($_POST["select_voting"]) {
             if($db){
                 $res = pg_query($db, "SELECT sumOfCandidates($voting)");
                 $candidateSum = pg_fetch_result($res, 0);
+                $res1 = pg_query($db, "SELECT sumOfCandidates($voting)");
+                $voteSum = pg_fetch_result($res1, 0);
 
             }
 
