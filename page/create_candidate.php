@@ -42,7 +42,7 @@ if($_POST["add_candidate"]){
 
     }
     else{
-       $candidate_error = "Kõik väljad peavad olema täidetud!";
+       $candidate_error = "Kõik väljad peavad olema täidetud! <a href='?to=create_candidate'>Logi sisse</a>";
     }
 }
 ?>
