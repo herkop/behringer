@@ -1,5 +1,6 @@
 <?php
 include "../data/config.php";
+include "../function/checkvalues.php";
 session_start();
 $logged_user = pg_escape_string($_SESSION["login_user"]);
 $id = "";
@@ -37,19 +38,23 @@ if($_POST["new_voting"]){
         if ($start >= $finish) {
             $voting_error = "Algus aeg ei tohi olla suurem lõpu ajast!";
         } else {
+            if(findTitle($title) != null){
+                $voting_error = "Antud pealkiri on juba kasutusel!";
+            } else {
 
-            if ($db) {
+                if ($db) {
 
-                $result = pg_query($db, "INSERT INTO voting(title, person, start_date, finish_date) VALUES('" . $title . "', '" . $id . "', '" . $start . "', '" . $finish . "')");
-                if ($result) {
-                    $title = "";
-                    $start_date = "";
-                    $start_time = "";
-                    $finish_date = "";
-                    $finish_time = "";
-                    $voting_error = "Lisaud!";
+                    $result = pg_query($db, "INSERT INTO voting(title, person, start_date, finish_date) VALUES('" . $title . "', '" . $id . "', '" . $start . "', '" . $finish . "')");
+                    if ($result) {
+                        $title = "";
+                        $start_date = "";
+                        $start_time = "";
+                        $finish_date = "";
+                        $finish_time = "";
+                        $voting_error = "Lisaud!";
+                    }
+                    pg_close($db);
                 }
-                pg_close($db);
             }
         }
     }
