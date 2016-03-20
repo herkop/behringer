@@ -22,3 +22,4 @@ function findTitle($title){
     }
     return null;
 }
+?>
