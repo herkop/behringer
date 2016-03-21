@@ -52,3 +52,29 @@ BEGIN
    RETURN total;
 END;
 $total$ LANGUAGE plpgsql;
+
+/**Voted? -- not added*/
+CREATE FUNCTION isVoted(per integer, vot boolean)
+RETURNS integer AS $voted$
+declare
+	total integer;
+	per integer;
+	vot boolean;
+BEGIN
+   SELECT vote into voted FROM voted WHERE voting = vote AND person = per;
+   RETURN voted;
+END;
+$voted$ LANGUAGE plpgsql;
+
+/** Osaletud hääletused -- not added*/
+CREATE FUNCTION isVoted(per integer, vot boolean)
+RETURNS integer AS $voted$
+declare
+	total integer;
+	per integer;
+	vot boolean;
+BEGIN
+   SELECT vote into voted FROM voted WHERE voting = vote AND person = per;
+   RETURN voted;
+END;
+$voted$ LANGUAGE plpgsql;

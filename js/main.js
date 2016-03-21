@@ -22,8 +22,8 @@
 
         $.post("/function/checkvalues.php", {
             title : title
-        }).done(function(error){
-            if(error.length==0)
+        }).done(function(value){
+            if(value)
             {
                 document.getElementById("titleck").innerHTML=title+" on saadaval!";
             }
