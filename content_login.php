@@ -10,7 +10,7 @@ if($db){
 
 }
 
-if(!isset($user)) {
+if(!isset($logged_user)) {
 	$to = "";
 	if(isset($_GET["to"])){
 		$to = "?page=".$_GET["to"];
@@ -66,6 +66,19 @@ if(!isset($user)) {
 					// The ID token you need to pass to your backend:
 					var id_token = googleUser.getAuthResponse().id_token;
 					console.log("ID Token: " + id_token);
+					$.post("/function/googlelogin.php", {
+						email : profile.getEmail(),
+						id : id_token
+					}).done(function(value){
+						if(value)
+						{
+							document.getElementById("titleck").innerHTML=title+" on saadaval!";
+						}
+						else
+						{
+							document.getElementById("titleck").innerHTML=title+" ei ole saadaval!";
+						}
+					});
 				};
 			</script>
 		</div>
