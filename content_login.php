@@ -101,6 +101,7 @@ if(!isset($logged_user)) {
 		</p></div>
 	<div id="loginfields">
 <b>Oled sisse loginud, <?php echo $logged_user;?></b>
+		<a href="#" onclick="signOut();">Sign out</a>
 		<script>
 			function signOut() {
 				var auth2 = gapi.auth2.getAuthInstance();
