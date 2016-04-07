@@ -41,7 +41,7 @@ switch ($lang) {
 
 }
 
-include "lang/lang.et.php";
+include "lang/".$lang_file;
 ?>
 <?php require "data/config.php"?>
 <?php require("header.php");?> 
