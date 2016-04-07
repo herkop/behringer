@@ -1,6 +1,8 @@
 <!DOCTYPE html> <!--HTML 5: http://www.w3schools.com/tags/tag_doctype.asp -->
 <?php
 
+$lang_file = "";
+$lang = "";
 session_start();
 header('Cache-control: private'); // IE 6 FIX
 
@@ -25,7 +27,6 @@ else
 {
     $lang = 'en';
 }
-
 switch ($lang) {
     case 'en':
         $lang_file = 'lang.en.php';
@@ -40,7 +41,7 @@ switch ($lang) {
 
 }
 
-include_once './lang/'.$lang_file;
+include "lang/".$lang_file;
 ?>
 <?php require "data/config.php"?>
 <?php require("header.php");?> 
