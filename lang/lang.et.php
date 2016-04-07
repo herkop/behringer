@@ -2,4 +2,4 @@
 
 $lang = array();
 
-$lang["ABOUT_VOTING"] = "Valimistest";
+$lang['ABOUT_VOTING'] = 'Valimistest';

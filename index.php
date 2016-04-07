@@ -1,8 +1,8 @@
 <!DOCTYPE html> <!--HTML 5: http://www.w3schools.com/tags/tag_doctype.asp -->
 <?php
 
-$lang_file = "";
-$lang = "";
+$lang_file = '';
+$lang = '';
 session_start();
 header('Cache-control: private'); // IE 6 FIX
 
