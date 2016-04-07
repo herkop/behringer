@@ -1,11 +1,22 @@
 <?php
 
-/**
- *----------------------
- * Language: English
- * ---------------------
- */
 
 $lang = array();
 
-$lang["ABOUT_VOTING"] = "About voting";
+/**
+ * Title
+ */
+
+
+/**
+ * Menu
+ */
+$lang['ABOUT_VOTING'] = 'About voting';
+$lang['LIST_OF_CANDIDATES'] = 'List of candidates';
+$lang['HELP'] = 'Help';
+$lang['ESTONIA'] = 'Estonia';
+$lang['ENGLISH'] = 'English';
+
+/**
+ * Login
+ */
