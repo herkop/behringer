@@ -101,7 +101,15 @@ if(!isset($logged_user)) {
 		</p></div>
 	<div id="loginfields">
 <b>Oled sisse loginud, <?php echo $logged_user;?></b>
-	<a href="data/logout.php">Logi välja</a>
+		<script>
+			function signOut() {
+				var auth2 = gapi.auth2.getAuthInstance();
+				auth2.signOut().then(function () {
+					console.log('User signed out.');
+				});
+			}
+		</script>
+	<a href="data/logout.php" onclick="signOut()">Logi välja</a>
 	</div>
 <?php
 }
