@@ -10,5 +10,5 @@ while ($row = pg_fetch_assoc($result1)) {
     $lastname = $row["lastname"];
     $array[] = $firstname . " " . $lastname;
 }
-
+pg_close($db);
 echo json_encode($array);
