@@ -9,6 +9,7 @@ while ($row = pg_fetch_assoc($result1)) {
     $firstname = $row["firstname"];
     $lastname = $row["lastname"];
     $array[] = $firstname . " " . $lastname;
+    echo $firstname;
 }
 
 echo json_encode($array);
