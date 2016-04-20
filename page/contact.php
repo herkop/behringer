@@ -1,5 +1,4 @@
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFNX4nLshrpB52NM82E-ssl-J-8XCf3zg&callback=initMap"
-        type="text/javascript"></script>
+
 <script>
     //google.maps.event.addDomListener(window, 'load', initMap);
     function initMap() {
