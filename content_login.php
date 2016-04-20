@@ -10,7 +10,7 @@ if($db){
 
 }
 
-if(!isset($logged_user)) {
+if(!isset($user)) {
 	$to = "";
 	if(isset($_GET["to"])){
 		$to = "?page=".$_GET["to"];
