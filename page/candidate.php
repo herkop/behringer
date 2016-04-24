@@ -68,14 +68,15 @@ if($_POST["select_voting"]) {
 
 
                 if ($db) {
-                    $result1 = pg_query($db, "SELECT firstname, lastname, voting, votenumber, party FROM candidate WHERE voting=$voting");
+                    $result1 = pg_query($db, "SELECT id, firstname, lastname, voting, votenumber, party FROM candidate WHERE voting=$voting");
                     while ($row = pg_fetch_assoc($result1)) {
+                        $id = $row["id"];
                         $firstname = $row["firstname"];
                         $lastname = $row["lastname"];
                         $votenumber = $row["votenumber"];
                         $party = $row["party"];
 
-                        echo "<tr>
+                        echo "<tr id='$id' class='candidateList'>
                 <td>$firstname $lastname</td>
                 <td>$party</td>
                 <td>$votenumber</td>
