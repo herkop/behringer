@@ -1,6 +1,6 @@
 <?php
 
-$key = $_GET['key'];
+$key = $_GET['term'];
 $array = array();
 include "../data/config.php";
 
