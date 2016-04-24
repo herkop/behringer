@@ -88,9 +88,9 @@ if($_POST["select_voting"]) {
 
                 }
                 ?>
-
+                <tr><td colspan="3"><div id="last_cand_loader"></div></td></tr>
             </table>
-            <div id="last_cand_loader"></div>
+
             <?php
 
     }
