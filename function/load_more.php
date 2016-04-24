@@ -3,9 +3,9 @@ include "../data/config.php";
 $last_cand = $_GET['last_cand'];
 $out = explode("CD", $last_cand)[1];
 $vote = explode("-", $out);
-echo $vote[0];
-echo $vote[1];
-$result = pg_query($db, "SELECT * FROM candidate WHERE voting = '$vote[0]' AND id < '$vote[1]' ORDER BY id DESC LIMIT 5");
+$voting = intval($vote[0]);
+$cand = intval($vote[1]);
+$result = pg_query($db, "SELECT * FROM candidate WHERE voting = '$voting' AND id < '$cand' ORDER BY id DESC LIMIT 5");
 while ($row = pg_fetch_assoc($result)){
     $id = $row['id'];
     $firstname = $row['firstname'];
