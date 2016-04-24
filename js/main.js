@@ -36,17 +36,6 @@
 
     $(document).ready(function() {
 
-        //AJAX LIVE SEARCH
-
-        $("div.frmSearch").click(function(){
-            $("#search").focus();
-        });
-
-        $("#search").autocomplete({
-            source: "page/search.php?key=",
-            minLength: 2
-        });
-
         function last_candidate(){
             var ID = $(".candidateList:last").attr("id");
             $('div#last_cand_loader').html('Laadin...');
