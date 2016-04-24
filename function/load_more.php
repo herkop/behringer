@@ -3,7 +3,7 @@ include "../data/config.php";
 $last_cand = $_GET['last_cand'];
 $vote = preg_match("[0-9]+", $last_cand);
 echo $vote;
-$result = pg_query($db, "SELECT * FROM candidate WHERE voting = '$vote' AND id < '$last_cand' ORDER BY id DESC LIMIT 5");
+$result = pg_query($db, "SELECT * FROM candidate WHERE voting = 1 AND id < '$last_cand' ORDER BY id DESC LIMIT 5");
 while ($row = pg_fetch_assoc($result)){
     $id = $row['id'];
     $firstname = $row['firstname'];
