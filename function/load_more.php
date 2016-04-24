@@ -5,7 +5,7 @@ $out = explode("CD", $last_cand)[1];
 $vote = explode("-", $out);
 $voting = intval($vote[0]);
 $cand = intval($vote[1]);
-$result = pg_query($db, "SELECT * FROM candidate WHERE voting = '$voting' AND id < '$cand' ORDER BY id DESC LIMIT 5");
+$result = pg_query($db, "SELECT * FROM candidate WHERE voting = $voting AND id < '$cand' ORDER BY id DESC LIMIT 5");
 while ($row = pg_fetch_assoc($result)){
     $id = $row['id'];
     $firstname = $row['firstname'];
