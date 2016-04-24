@@ -46,4 +46,23 @@
             source: "page/search.php?key=",
             minLength: 2
         });
+
+        function last_candidate(){
+            var ID = $(".candidateList:last").attr("id");
+            $('div#last_cand_loader').html('<img src="">');
+            $.post("function/load_more.php?last_cand="+ID,
+                function (data) {
+                    if(data != ""){
+                        $(".candidateList_last").after(data);
+                    }
+                    $('div#last_cand_loader').empty();
+                });
+        }
+
+        $(window).scroll(function(){
+            if($(window).scrollTop() == $(document).height() - $(window).height()){
+                last_candidate();
+            }
+        })
+
     });

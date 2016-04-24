@@ -72,7 +72,7 @@ if($_POST["select_voting"]) {
 
 
                 if ($db) {
-                    $result1 = pg_query($db, "SELECT id, firstname, lastname, voting, votenumber, party FROM candidate WHERE voting=$voting");
+                    $result1 = pg_query($db, "SELECT id, firstname, lastname, voting, votenumber, party FROM candidate WHERE voting=$voting ORDER BY id DESC LIMIT 2");
                     while ($row = pg_fetch_assoc($result1)) {
                         $id = $row["id"];
                         $firstname = $row["firstname"];
@@ -92,6 +92,7 @@ if($_POST["select_voting"]) {
                 ?>
 
             </table>
+            <div id="last_cand_loader"></div>
             <?php
 
     }
