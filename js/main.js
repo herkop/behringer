@@ -33,3 +33,17 @@
             }
         });
     }
+
+    $(document).ready(function() {
+
+        //AJAX LIVE SEARCH
+
+        $("div.frmSearch").click(function(){
+            $("#search").focus();
+        });
+
+        $("#search").autocomplete({
+            source: "page/search.php?key=",
+            minLength: 2
+        });
+    });
