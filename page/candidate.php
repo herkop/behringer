@@ -79,8 +79,9 @@ if($_POST["select_voting"]) {
                         $lastname = $row["lastname"];
                         $votenumber = $row["votenumber"];
                         $party = $row["party"];
+                        $candID = "CD" + $voting + "-" + $id;
 
-                        echo "<tr id='$id' class='candidateList'>
+                        echo "<tr id='$candID' class='candidateList'>
                 <td>$firstname $lastname</td>
                 <td>$party</td>
                 <td>$votenumber</td>
