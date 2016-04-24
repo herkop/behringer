@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Valimistest</title>
-	</head>
-	<body>
 		<nav id="main">
 			<a href="?page=election_kov">Kohalikud valimised</a>
 			<a href="?page=election_pres">Presidendi valimised</a>
