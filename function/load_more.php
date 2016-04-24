@@ -1,5 +1,5 @@
 <?php
-
+include "../data/config.php";
 $last_cand = $_GET['last_cand'];
 $result = pg_query($db, "SELECT * FROM candidate WHERE id < '$last_cand' ORDER BY id DESC LIMIT 5");
 while ($row = pg_fetch_assoc($result)){
