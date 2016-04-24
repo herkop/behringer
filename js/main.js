@@ -35,8 +35,9 @@
     }
 
     $(document).ready(function() {
-
+        var ch = false;
         function last_candidate(){
+            ch=true;
             var ID = $(".candidateList:last").attr("id");
             $('div#last_cand_loader').html('Laadin...');
             $.post("function/load_more.php?last_cand="+ID,
@@ -45,12 +46,15 @@
                         $(".candidateList:last").after(data);
                     }
                     $('div#last_cand_loader').empty();
+                    ch=false;
                 });
         }
 
         $(window).scroll(function(){
             if($(window).scrollTop() == $(document).height() - $(window).height()){
-                last_candidate();
+                if(ch == false) {
+                    last_candidate();
+                }
             }
         })
 
