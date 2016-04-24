@@ -79,7 +79,7 @@ if($_POST["select_voting"]) {
                         $lastname = $row["lastname"];
                         $votenumber = $row["votenumber"];
                         $party = $row["party"];
-                        $candID = "CD" + $voting + "-" + $id;
+                        $candID = "CD". $voting . "-" . $id;
 
                         echo "<tr id='$candID' class='candidateList'>
                 <td>$firstname $lastname</td>
