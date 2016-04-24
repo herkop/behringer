@@ -49,11 +49,11 @@
 
         function last_candidate(){
             var ID = $(".candidateList:last").attr("id");
-            $('div#last_cand_loader').html('<img src="">');
+            $('div#last_cand_loader').html('Laadin...');
             $.post("function/load_more.php?last_cand="+ID,
                 function (data) {
                     if(data != ""){
-                        $(".candidateList_last").after(data);
+                        $(".candidateList:last").after(data);
                     }
                     $('div#last_cand_loader').empty();
                 });
