@@ -53,7 +53,7 @@
             $.post("function/load_more.php?last_cand="+ID,
                 function (data) {
                     if(data != ""){
-                        $(".candidateList:last").after(data);
+                        $("#last_cand_loader").after(data);
                     }
                     $('div#last_cand_loader').empty();
                 });
