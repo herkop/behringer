@@ -43,8 +43,8 @@ switch ($language) {
 
 include "lang/".$lang_file;
 ?>
-<?php require "data/config.php"?>
-<?php require("header.php");?> 
+<?php require "data/config.php";?>
+<?php require("header.php");?>
 <?php require("banner.php");?>
 <div id="contentcontainer">
 <?php

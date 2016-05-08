@@ -1,5 +1,5 @@
 <?
-include "../data/config.php";
+//include "../data/config.php";
 $voting = "";
 if($_POST["select_voting"]) {
     $voting = $_POST["voting"];
