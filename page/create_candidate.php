@@ -42,14 +42,14 @@
 
 <form name="create_candidate" method="post" action="">
     <span><?php echo $candidate_error;?></span><br>
-    <b>Kandidaadid eesnimi:</b><br>
-    <input type="text" name="firstname" value="<?php echo $firstname;?>"><br>
-    <b>Kandidaadi perenimi:</b><br>
-    <input type="text" name="lastname" value="<?php echo $lastname;?>"><br>
-    <b>Erakond</b><br>
-    <input type="text" name="party" value="<?php echo $party;?>"><br>
-    <b>Hääletus:</b><br>
-    <select name="voting">
+    <label for="firstname"><strong>Kandidaadid eesnimi:</strong></label><br>
+    <input type="text" id="firstname" name="firstname" value="<?php echo $firstname;?>"><br>
+    <label for="lastname"><strong>Kandidaadi perenimi:</strong></label><br>
+    <input type="text" id="lastname" name="lastname" value="<?php echo $lastname;?>"><br>
+    <label for="party"><strong>Erakond</strong></label><br>
+    <input type="text" id="party" name="party" value="<?php echo $party;?>"><br>
+    <label for="voting"><strong>Hääletus:</strong></label><br>
+    <select id="voting" name="voting">
         <option value="0" <?php if(!$voting)echo"selected='selected'"?> disabled="disabled">Vali</option>
         <?php
 		    if($db){

@@ -69,12 +69,12 @@ if(isset($_POST["new_voting"])){
 
 <form action="" method="post" name="create_voting">
     <span id="titleck"><?php echo $voting_error; ?></span><br>
-    <b>Pealkiri: </b><br>
-    <input type="text" name="title" value="<?php echo $title;?>"><br>
-    <b>Algus aeg:</b><br>
-    <input type="date" name="start_date" value="<?php echo $start_date;?>"><input type="time" name="start_time" value="<?php echo $start_time?>"><br>
-    <b>Lõpu aeg:</b><br>
-    <input type="date" name="finish_date" value="<?php echo $finish_date?>"><input type="time" name="finish_time" value="<?php echo $finish_time;?>"><br>
+    <label for="title"><strong>Pealkiri: </strong></label><br>
+    <input type="text" id="title" name="title" value="<?php echo $title;?>"><br>
+    <label for="start"><strong>Algus aeg:</strong></label><br>
+    <input type="date" id="start" name="start_date" value="<?php echo $start_date;?>"><input type="time" id="start" name="start_time" value="<?php echo $start_time?>"><br>
+    <label for="finish"><strong>Lõpu aeg:</strong></label><br>
+    <input type="date" id="finish" name="finish_date" value="<?php echo $finish_date?>"><input type="time" id="finish" name="finish_time" value="<?php echo $finish_time;?>"><br>
     <input type="submit" name="new_voting" value="Lisa">
 </form>
 <?php }?>

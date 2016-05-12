@@ -10,9 +10,9 @@
 ?>
 
 <div class="candidateSelect">
-    <b>Valimised:</b>
+    <label for="voting_select"><strong>Valimised:</strong></label>
     <form method="post" name="show_voting">
-        <select name="voting">
+        <select id="voting_select" name="voting">
             <option value="0" <?php if(!$voting)echo"selected='selected'"?> disabled="disabled">Vali</option>
             <?php
 		        if($db){
@@ -28,7 +28,8 @@
         </select>
         <input type="submit" name="select_voting" value="Vali">
         <div class="frmSearch">
-            <input type="text" id="search" size="25">
+			<label for="search"><strong>Otsi kandidaati:</strong></label><br>
+			<input type="text" id="search" size="25">
             <div id="suggestion-box"></div>
         </div>
 	</form>
