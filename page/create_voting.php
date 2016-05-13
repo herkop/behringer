@@ -25,6 +25,7 @@ $start_date ="";
 $start_time = "";
 $finish_date = "";
 $finish_time = "";
+$regions = "";
 if(isset($_POST["new_voting"])){
 
     $person = 1;
@@ -33,6 +34,7 @@ if(isset($_POST["new_voting"])){
     $start_time = pg_escape_string($_POST["start_time"]);
     $finish_date = pg_escape_string($_POST["finish_date"]);
     $finish_time = pg_escape_string($_POST["finish_time"]);
+    $regions = pg_escape_string($_POST["regions"]);
     if($title && $start_date && $start_time && $finish_date && $finish_time) {
         $start = date("d.m.Y H:i:s", strtotime($start_date . " " . $start_time));
         $finish = date("d.m.Y H:i:s", strtotime($finish_date . " " . $finish_time));
@@ -47,13 +49,14 @@ if(isset($_POST["new_voting"])){
             } else {
                 if ($db) {
 
-                    $result = pg_query($db, "INSERT INTO voting(title, person, start_date, finish_date) VALUES('" . $title . "', '" . $id . "', '" . $start . "', '" . $finish . "')");
+                    $result = pg_query($db, "INSERT INTO voting(title, person, start_date, finish_date, regions) VALUES('" . $title . "', '" . $id . "', '" . $start . "', '" . $finish . "', '" . $regions ."')");
                     if ($result) {
                         $title = "";
                         $start_date = "";
                         $start_time = "";
                         $finish_date = "";
                         $finish_time = "";
+                        $regions = "";
                         $voting_error = "Lisaud!";
                     }
                     pg_close($db);
@@ -75,6 +78,8 @@ if(isset($_POST["new_voting"])){
     <input type="date" id="start" name="start_date" value="<?php echo $start_date;?>"><input type="time" id="start" name="start_time" value="<?php echo $start_time?>"><br>
     <label for="finish"><strong>Lõpu aeg:</strong></label><br>
     <input type="date" id="finish" name="finish_date" value="<?php echo $finish_date?>"><input type="time" id="finish" name="finish_time" value="<?php echo $finish_time;?>"><br>
+    <label for="regions"><strong>Piirkonnad (Tuleb kirjutada üks piirkond ühele reale!): </strong></label>
+    <textarea id="regions" name="regions"><?php echo $regions;?></textarea>
     <input type="submit" name="new_voting" value="Lisa">
 </form>
 <?php }?>

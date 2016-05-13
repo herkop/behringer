@@ -56,9 +56,9 @@
 </div>
 <table>
 	<tr>
-		<td><b>Nimi</b></td>
-		<td><b>Erakond</b></td>
-		<td><b>Number</b></td>
+		<td><strong>Nimi</strong></td>
+		<td><strong>Erakond</strong></td>
+		<td><strong>Number</strong></td>
 	</tr>
     <?php
 		if ($db&&$voting!="") {

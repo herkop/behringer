@@ -38,7 +38,32 @@
 		}
 		else{$candidate_error = "Kõik väljad peavad olema täidetud!";}
 	}
-?>
+
+    if(isset($_POST["voting_create_candidate"])){
+
+    }
+    ?>
+<form name="voting_create_candidate" method="post">
+        <select id="voting" name="voting">
+            <option value="0" <?php if(!$voting)echo"selected='selected'"?> disabled="disabled">Vali</option>
+            <?php
+            if($db){
+                $result = pg_query($db, "SELECT * FROM voting");
+                while($row = pg_fetch_assoc($result)){
+                    $id = $row["id"];
+                    $title = $row["title"];
+                    $start_date = $row["start_date"];
+                    $finish_date = $row["finish_date"];
+                    $current = time();
+                    if(strtotime($start_date) > $current && strtotime($finish_date) < $current) { //kontrollib kas hääletus on aktiivne!!!!
+                    }
+                    if($voting == $id) {echo "<option value='$id' selected='selected'>$title</option>";}
+                    else{echo "<option value='$id'>$title</option>";}
+                }
+            }
+            ?>
+        </select><br>
+    </form>
 
 <form name="create_candidate" method="post" action="">
     <span><?php echo $candidate_error;?></span><br>
