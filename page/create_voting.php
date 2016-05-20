@@ -57,7 +57,7 @@ if(isset($_POST["new_voting"])){
                         $finish_date = "";
                         $finish_time = "";
                         $regions = "";
-                        $voting_error = "Lisaud!";
+                        $voting_error = "Lisatud!";
                     }
                     pg_close($db);
                 }
@@ -78,7 +78,7 @@ if(isset($_POST["new_voting"])){
     <input type="date" id="start" name="start_date" value="<?php echo $start_date;?>"><input type="time" id="start" name="start_time" value="<?php echo $start_time?>"><br>
     <label for="finish"><strong>Lõpu aeg:</strong></label><br>
     <input type="date" id="finish" name="finish_date" value="<?php echo $finish_date?>"><input type="time" id="finish" name="finish_time" value="<?php echo $finish_time;?>"><br>
-    <label for="regions"><strong>Piirkonnad (Tuleb kirjutada üks piirkond ühele reale!): </strong></label>
+    <label for="regions"><strong>Piirkonnad (Tuleb kirjutada üks piirkond ühele reale!): </strong></label><br>
     <textarea id="regions" name="regions"><?php echo $regions;?></textarea>
     <input type="submit" name="new_voting" value="Lisa">
 </form>

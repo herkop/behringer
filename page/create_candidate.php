@@ -73,17 +73,25 @@
     <input type="text" id="lastname" name="lastname" value="<?php echo $lastname;?>"><br>
     <label for="party"><strong>Erakond</strong></label><br>
     <input type="text" id="party" name="party" value="<?php echo $party;?>"><br>
-    <label for="voting"><strong>Hääletus:</strong></label><br>
+	<label for="voting"><strong>Piirkond:</strong></label><br>
     <select id="voting" name="voting">
         <option value="0" <?php if(!$voting)echo"selected='selected'"?> disabled="disabled">Vali</option>
         <?php
 		    if($db){
-		        $result = pg_query($db, "SELECT * FROM voting");
+
+		        $result = pg_query($db, "SELECT * FROM voting WHERE id='$id'");
 		        while($row = pg_fetch_assoc($result)){
 		            $id = $row["id"];
-		            $title = $row["title"];
-		            if($voting == $id) {echo "<option value='$id' selected='selected'>$title</option>";}
-		            else{echo "<option value='$id'>$title</option>";}
+		            $region_text = $row["region"];
+					$regs = array();
+					$regs = explode("\n", $region_text);
+					for ($i = 0; $i < count($regs); $i++){
+						if ($region == $i) {
+							echo "<option value='$i' selected='selected'>$regs[$i]</option>";
+						} else {
+							echo "<option value='$i'>$regs[$i]</option>";
+						}
+					}
 		        }
 		    }
         ?>
