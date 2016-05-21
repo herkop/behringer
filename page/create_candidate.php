@@ -49,6 +49,7 @@
         <select id="voting" name="voting">
             <option value="0" <?php if(!$voting)echo"selected='selected'"?> disabled="disabled">Vali</option>
             <?php
+            $out = "";
             if($db){
                 $result = pg_query($db, "SELECT * FROM voting");
                 while($row = pg_fetch_assoc($result)){
@@ -57,7 +58,7 @@
                     $start_date = $row["start_date"];
                     $finish_date = $row["finish_date"];
                     $current = time();
-                    echo strtotime($start_date) . "@" . $current . "\n";
+                    $out .= strtotime($start_date) . "@" . $current . "\n";
                     if(strtotime($start_date) > $current) { //kontrollib kas hääletus ei ole aktiivne!!!!
 						if ($voting == $id) {
 							echo "<option value='$id' selected='selected'>$title</option>";
@@ -73,9 +74,11 @@
                         }
                     }
                 }
+
             }
             ?>
         </select><br>
+        <?php echo $out;?>
         <input type="submit" value="Vali" name="select_vote">
     </form>
         <?php
