@@ -18,12 +18,14 @@
 	$lastname = "";
 	$voting = "";
 	$party = "";
+	$region = "";
 	//include "../data/config.php";
 	if(isset($_POST["add_candidate"])){
 		$firstname = pg_escape_string($_POST["firstname"]);
 		$lastname = pg_escape_string($_POST["lastname"]);
 		$voting = pg_escape_string($_POST["voting"]);
 		$party = pg_escape_string($_POST["party"]);
+		$region = pg_escape_string($_POST["region"]);
 		if($firstname && $lastname && $voting && $party){
 		    if($db){
 		        $result = pg_query($db, "INSERT INTO candidate(firstname, lastname, votenumber, voting, party) VALUES('" .$firstname."', '" .$lastname. "', nextval('vote_number'), '" .$voting. "', '" .$party."')");
@@ -55,16 +57,32 @@
                     $start_date = $row["start_date"];
                     $finish_date = $row["finish_date"];
                     $current = time();
-                    if(strtotime($start_date) > $current && strtotime($finish_date) < $current) { //kontrollib kas hääletus on aktiivne!!!!
+                    if(strtotime($start_date) > $current) { //kontrollib kas hääletus ei ole aktiivne!!!!
+						if ($voting == $id) {
+							echo "<option value='$id' selected='selected'>$title</option>";
+						} else {
+							echo "<option value='$id'>$title</option>";
+						}
+					}
+                    else{
+                        if ($voting == $id) {
+                            echo "<option value='$id' selected='selected' disabled='disabled'>$title</option>";
+                        } else {
+                            echo "<option value='$id' disabled='disabled'>$title</option>";
+                        }
                     }
-                    if($voting == $id) {echo "<option value='$id' selected='selected'>$title</option>";}
-                    else{echo "<option value='$id'>$title</option>";}
                 }
             }
             ?>
         </select><br>
+        <input type="submit" value="Vali" name="select_vote">
     </form>
+        <?php
 
+        if(isset($_POST["select_vote"])){
+            $voting = $_POST["voting"];
+
+        ?>
 <form name="create_candidate" method="post" action="">
     <span><?php echo $candidate_error;?></span><br>
     <label for="firstname"><strong>Kandidaadid eesnimi:</strong></label><br>
@@ -98,4 +116,4 @@
     </select><br>
     <input type="submit" name="add_candidate" value="Lisa">
 </form>
-<?php } pg_close($db);?>
+<?php }} pg_close($db);?>
