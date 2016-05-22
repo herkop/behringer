@@ -17,9 +17,9 @@
 
 <div id="loginfields">
     <form action="" method="post" name="voting">
-        <b>Vali kandidaat: </b>
+        <label for="sel_candidate"><strong>Vali kandidaat: </strong></label>
         <span><?php echo $voting_error;?></span><br>
-        <input type="text" name="candidate_nr"><br>
+        <input type="text" name="candidate_nr" id="sel_candidate"><br>
         <input type="submit" name="vote" value="Hääleta">
     </form>
 </div>

@@ -83,6 +83,7 @@
 		<p>Sisse loginutele:</p>
 			<a href="?page=create_voting">Lisa valimine</a>
 			<a href="?page=create_candidate">Lisa kandidaat</a>
+			<a href="?page=voting">Hääletamine</a>
 	</div>
 	<div id="loginfields">
 		<b>Oled sisse loginud, <?php echo $logged_user;?></b>
