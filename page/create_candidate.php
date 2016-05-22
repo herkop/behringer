@@ -70,13 +70,7 @@
 							echo "<option value='$id'>$title</option>";
 						}
 					}
-                    else{
-                        if ($voting == $id) {
-                            echo "<option value='$id' selected='selected' disabled='disabled'>$title</option>";
-                        } else {
-                            echo "<option value='$id' disabled='disabled'>$title</option>";
-                        }
-                    }
+
                 }
 
             }
