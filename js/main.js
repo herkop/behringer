@@ -59,4 +59,9 @@
                 }
             }
         })
+
+
+        $(".candInfo tr").click(function() {
+            $("#sel_candidate").textContent(this.id);
+        });
     });
