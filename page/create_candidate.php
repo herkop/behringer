@@ -58,7 +58,7 @@
                     $start_date = $row["start_date"];
                     $finish_date = $row["finish_date"];
                     $current = time();
-                    $out .= strtotime($start_date) . "@" . $current . "\n";
+                    $out .= $start_date . "@". strtotime($start_date) . "@" . $current . "\n";
                     if(strtotime($start_date) > $current) { //kontrollib kas hääletus ei ole aktiivne!!!!
 						if ($voting == $id) {
 							echo "<option value='$id' selected='selected'>$title</option>";
