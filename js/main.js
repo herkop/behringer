@@ -62,6 +62,6 @@
 
 
         $(".candInfo tr").click(function() {
-            $("#sel_candidate").html(this.id);
+            $("#sel_candidate").val(this.id);
         });
     });
