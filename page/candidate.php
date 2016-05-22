@@ -42,7 +42,7 @@
 		if($db){
 			$res = pg_query($db, "SELECT sumOfCandidates($voting)");
 			$value1 = pg_fetch_result($res, 0);
-			$res1 = pg_query($db, "SELECT sumOfVotes($voting)");
+			$res1 = pg_query($db, "SELECT SUM(votes) FROM candidate WHERE voting = $voting;");
 			$value2 = pg_fetch_result($res1, 0);
 			if($value1){$candidateSum = $value1;}
             if($value2){$voteSum = $value2;}
