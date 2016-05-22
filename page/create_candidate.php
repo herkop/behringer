@@ -34,7 +34,7 @@
 		$region = pg_escape_string($_POST["region"]);
 		if($firstname && $lastname && $voting && $party && $region){
 		    if($db){
-		        $result = pg_query($db, "INSERT INTO candidate(firstname, lastname, votenumber, voting, party, region) VALUES('" .$firstname."', '" .$lastname. "', nextval('vote_number'), '" .$voting. "', '" .$party."', '".($region-1)."')");
+		        $result = pg_query($db, "INSERT INTO candidate(firstname, lastname, votenumber, voting, party, region) VALUES('" .$firstname."', '" .$lastname. "', nextval('vote_number'), '" .$voting. "', '" .$party."', '".$region."')");
 		        if($result){
 		            $firstname = "";
 		            $lastname = "";
@@ -107,11 +107,10 @@
                     $region_text = $row["regions"];;
                     $regs = explode(PHP_EOL, $region_text);
                     for ($i = 0; $i < count($regs); $i++){
-                        $j = $i + 1;
-                        if ($region == $j) {
-                            echo "<option value='$j' selected='selected'>$regs[$i] $region</option>";
+                        if ($region == $regs[$i]) {
+                            echo "<option value='$regs[$i]' selected='selected'>$regs[$i]</option>";
                         } else {
-                            echo "<option value='$j'>$regs[$i]</option>";
+                            echo "<option value='$regs[$i]'>$regs[$i]</option>";
                         }
 					}
 		        }
