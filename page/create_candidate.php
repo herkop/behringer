@@ -57,6 +57,7 @@
                     $title = $row["title"];
                     $start_date = $row["start_date"];
                     $finish_date = $row["finish_date"];
+                    $start_date = str_replace("/", ".", $start_date);
                     $current = time();
                     $out .= $start_date . "@". strtotime($start_date) . "@" . $current . "\n";
                     if(strtotime($start_date) > $current) { //kontrollib kas hääletus ei ole aktiivne!!!!
