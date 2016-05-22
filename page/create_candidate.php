@@ -96,7 +96,7 @@
     <label for="party"><strong>Erakond</strong></label><br>
     <input type="text" id="party" name="party" value="<?php echo $party;?>"><br>
 	<label for="voting"><strong>Piirkond:</strong></label><br>
-    <select id="voting" name="voting">
+    <select id="voting" name="region">
         <option value="0" <?php if(!$region)echo"selected='selected'"?> disabled="disabled">Vali</option>
         <?php
 		    if($db){
@@ -106,7 +106,7 @@
 		            $id = $row["id"];
 		            $region_text = $row["region"];
 					$regs = array();
-					$regs = explode("\n", $region_text);
+					$regs = explode(PHP_EOL, $region_text);
 					for ($i = 0; $i < count($regs); $i++){
 						if ($region == $i) {
 							echo "<option value='$i' selected='selected'>$regs[$i]</option>";
