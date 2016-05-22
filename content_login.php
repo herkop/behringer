@@ -35,6 +35,7 @@
 				<ul>
 					<li><a href="?page=create_voting">Lisa valimine</a></li>
 					<li><a href="?page=create_candidate">Lisa kandidaat</a></li>
+					<a href="?page=voting">Hääletamine</a>
 				</ul>
 			</nav>
 		</div>
