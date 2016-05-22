@@ -16,11 +16,15 @@
 	//include "../data/config.php";
 	$voting_error = "";
 	if(isset($_POST["vote"])){
+		$candidate_nr = $_POST["candidate_nr"];
 		if($db){
 		    /**+1 to candidate*/
-		    $result = pg_query($db, "");
+		    $result = pg_query($db, "SELECT * FROM candidate WHERE votenumber=$candidate_nr");
+			$row = pg_fetch_assoc($result);
+			$votenr = $row["votes"];
+			$vtnr = $votenr + 1;
 		    /**add user to voted*/
-		    $result1 = pg_query($db, "");
+		    $result1 = pg_query($db, "UPDATE candidate SET votes=$vtnr WHERE votenumber=$candidate_nr");
 		    if($result){$voting_error ="Hääl on antud!";}
 		}
 	}
@@ -41,7 +45,7 @@
 			$party = $row["party"];
 			$region = $row["region"];
 			$candID = "CD". $voting . "-" . $id;
-			echo "<tr id='$candID'>
+			echo "<tr id='$votenumber'>
                 		<td>$votenumber</td>
                 		<td>$firstname $lastname</td>
                 	  </tr>";
