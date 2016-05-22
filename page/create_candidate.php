@@ -117,7 +117,7 @@
 		    }
         ?>
     </select><br>
-    <?php echo $region_text . "@" . $regs; ?>
+    <?php echo $region_text . "@";?>
     <input type="submit" name="add_candidate" value="Lisa">
 </form>
 <?php }} pg_close($db);?>
