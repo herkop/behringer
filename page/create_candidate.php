@@ -38,7 +38,6 @@
 		        if($result){
 		            $firstname = "";
 		            $lastname = "";
-		            $voting = "";
 		            $party = "";
                     $region = "";
 		            $candidate_error = "Lisatud!";
@@ -109,7 +108,7 @@
 					$regs = explode(PHP_EOL, $region_text);
 					for ($i = 0; $i < count($regs); $i++){
 						if ($region == $i) {
-							echo "<option value='$i' selected='selected'>$regs[$i]</option>";
+							echo "<option value='$i' selected='selected'>$regs[$i] $region</option>";
 						} else {
 							echo "<option value='$i'>$regs[$i]</option>";
 						}
