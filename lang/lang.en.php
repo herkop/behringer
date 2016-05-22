@@ -8,5 +8,6 @@
 	$lang['CONTACT'] = 'Contact';
 	$lang['ESTONIA'] = 'Eesti';
 	$lang['ENGLISH'] = 'English';
+	$lang['RESULTS'] = 'Results';
 	// Login
 ?>
