@@ -26,9 +26,10 @@
         $select_vote = true;
     }
     if(isset($_POST["add_candidate"])){
+        $select_vote = true;
 		$firstname = pg_escape_string($_POST["firstname"]);
 		$lastname = pg_escape_string($_POST["lastname"]);
-		//$voting = pg_escape_string($_POST["voting"]);
+		$voting = pg_escape_string($_POST["voting"]);
 		$party = pg_escape_string($_POST["party"]);
 		$region = pg_escape_string($_POST["region"]);
 		if($firstname && $lastname && $voting && $party){
@@ -49,7 +50,8 @@
 
 
     ?>
-<form name="voting_create_candidate" method="post">
+
+<form name="create_candidate" method="post" action="">
         <select id="voting" name="voting">
             <option value="0" <?php if(!$voting)echo"selected='selected'"?> disabled="disabled">Vali</option>
             <?php
@@ -82,13 +84,12 @@
             ?>
         </select><br>
         <input type="submit" value="Vali" name="select_vote">
-    </form>
+
         <?php
 
         if($select_vote){
 
         ?>
-<form name="create_candidate" method="post" action="">
     <span><?php echo $candidate_error;?></span><br>
     <label for="firstname"><strong>Kandidaadid eesnimi:</strong></label><br>
     <input type="text" id="firstname" name="firstname" value="<?php echo $firstname;?>"><br>
@@ -118,5 +119,6 @@
         ?>
     </select><br>
     <input type="submit" name="add_candidate" value="Lisa">
+    <?php }?>
 </form>
-<?php }} pg_close($db);?>
+<?php } pg_close($db);?>
