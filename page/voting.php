@@ -26,7 +26,7 @@
 	}
 ?>
 
-<div id="logininfo">List of candidates:</div>
+<div id="logininfo">List of candidates:<br>
 <table class="candInfo">
 	<tr><th>Nr</th><th>Nimi</th></tr>
 	<?php
@@ -50,6 +50,7 @@
 	}
 	?>
 </table>
+		</div>
 <div id="loginfields">
     <form action="" method="post" name="voting">
         <label for="sel_candidate"><strong>Vali kandidaat: </strong></label>
