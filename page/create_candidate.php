@@ -98,11 +98,11 @@
     <input type="text" id="party" name="party" value="<?php echo $party;?>"><br>
 	<label for="voting"><strong>Piirkond:</strong></label><br>
     <select id="voting" name="voting">
-        <option value="0" <?php if(!$voting)echo"selected='selected'"?> disabled="disabled">Vali</option>
+        <option value="0" <?php if(!$region)echo"selected='selected'"?> disabled="disabled">Vali</option>
         <?php
 		    if($db){
 
-		        $result = pg_query($db, "SELECT * FROM voting WHERE id='$id'");
+		        $result = pg_query($db, "SELECT * FROM voting WHERE id='$voting'");
 		        while($row = pg_fetch_assoc($result)){
 		            $id = $row["id"];
 		            $region_text = $row["region"];
