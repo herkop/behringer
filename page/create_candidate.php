@@ -33,12 +33,13 @@
 		$region = pg_escape_string($_POST["region"]);
 		if($firstname && $lastname && $voting && $party){
 		    if($db){
-		        $result = pg_query($db, "INSERT INTO candidate(firstname, lastname, votenumber, voting, party) VALUES('" .$firstname."', '" .$lastname. "', nextval('vote_number'), '" .$voting. "', '" .$party."')");
+		        $result = pg_query($db, "INSERT INTO candidate(firstname, lastname, votenumber, voting, party, region) VALUES('" .$firstname."', '" .$lastname. "', nextval('vote_number'), '" .$voting. "', '" .$party."', '".$region."')");
 		        if($result){
 		            $firstname = "";
 		            $lastname = "";
 		            $voting = "";
 		            $party = "";
+                    $region = "";
 		            $candidate_error = "Lisatud!";
 		        }
 		    }
@@ -100,7 +101,6 @@
         <option value="0" <?php if(!$region)echo"selected='selected'"?> disabled="disabled">Vali</option>
         <?php
 		    if($db){
-                $region_text = "";
 		        $result = pg_query($db, "SELECT * FROM voting WHERE id='$voting'");
 		        while($row = pg_fetch_assoc($result)){
 		            $id = $row["id"];
@@ -117,7 +117,6 @@
 		    }
         ?>
     </select><br>
-    <?php echo $region_text . "@";?>
     <input type="submit" name="add_candidate" value="Lisa">
 </form>
 <?php }} pg_close($db);?>
