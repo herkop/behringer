@@ -158,14 +158,14 @@ input[type=submit]{
 	
 }
 
-table .candInfo th{
+table.candInfo th{
 	font-weight: bold;
 }
 
-table .candInfo tr{
+table.candInfo tr{
 	cursor: pointer;
 }
 
-table .candInfo tr:hover{
+table.candInfo tr:hover{
 	background-color: #47FF47;
 }
