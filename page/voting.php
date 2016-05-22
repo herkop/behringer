@@ -27,7 +27,7 @@
 ?>
 
 <div id="logininfo">List of candidates:</div>
-<table>
+<table class="candInfo">
 	<tr><th>Nr</th><th>Nimi</th></tr>
 	<?php
 	$voting = 6; //MUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUTA
@@ -41,7 +41,7 @@
 			$party = $row["party"];
 			$region = $row["region"];
 			$candID = "CD". $voting . "-" . $id;
-			echo "<tr id='$candID' class='candList'>
+			echo "<tr id='$candID'>
                 		<td>$votenumber</td>
                 		<td>$firstname $lastname</td>
                 	  </tr>";
