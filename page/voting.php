@@ -24,11 +24,32 @@
 		    if($result){$voting_error ="Hääl on antud!";}
 		}
 	}
-	pg_close($db);
 ?>
 
 <div id="logininfo">List of candidates:</div>
-
+<table>
+	<tr><th>Nr</th><th>Nimi</th></tr>
+	<?php
+	$voting = 6; //MUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUTA
+	if ($db&&$voting!="") {
+		$result1 = pg_query($db, "SELECT id, firstname, lastname, voting, votenumber, party, region FROM candidate WHERE voting=$voting ORDER BY firstname, lastname DESC");
+		while ($row = pg_fetch_assoc($result1)) {
+			$id = $row["id"];
+			$firstname = $row["firstname"];
+			$lastname = $row["lastname"];
+			$votenumber = $row["votenumber"];
+			$party = $row["party"];
+			$region = $row["region"];
+			$candID = "CD". $voting . "-" . $id;
+			echo "<tr id='$candID' class='candList'>
+                		<td>$votenumber</td>
+                		<td>$firstname $lastname</td>
+                	  </tr>";
+		}
+		//echo pg_last_error($db);
+	}
+	?>
+</table>
 <div id="loginfields">
     <form action="" method="post" name="voting">
         <label for="sel_candidate"><strong>Vali kandidaat: </strong></label>
