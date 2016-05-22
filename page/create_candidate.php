@@ -104,7 +104,7 @@
 		        $result = pg_query($db, "SELECT * FROM voting WHERE id='$voting'");
 		        while($row = pg_fetch_assoc($result)){
 		            $id = $row["id"];
-		            $region_text = $row["region"];;
+		            $region_text = $row["regions"];;
 					$regs = explode(PHP_EOL, $region_text);
 					for ($i = 0; $i < count($regs); $i++){
 						if ($region == $i) {
