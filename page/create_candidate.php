@@ -98,7 +98,7 @@
     <input type="text" id="party" name="party" value="<?php echo $party;?>"><br>
 	<label for="voting"><strong>Piirkond:</strong></label><br>
     <select id="voting" name="region">
-        <option value="-1" <?php if(!$region)echo"selected='selected'"?> disabled="disabled">Vali</option>
+        <option value="0" <?php if(!$region)echo"selected='selected'"?> disabled="disabled">Vali</option>
         <?php
 		    if($db){
 		        $result = pg_query($db, "SELECT * FROM voting WHERE id='$voting'");
@@ -107,10 +107,11 @@
 		            $region_text = $row["regions"];;
 					$regs = explode(PHP_EOL, $region_text);
 					for ($i = 0; $i < count($regs); $i++){
-						if ($region == $i) {
-							echo "<option value='$i' selected='selected'>$regs[$i] $region</option>";
+                        $j = $i + 1;
+						if ($region == $j) {
+							echo "<option value='$j' selected='selected'>$regs[$i] $region</option>";
 						} else {
-							echo "<option value='$i'>$regs[$i]</option>";
+							echo "<option value='$j'>$regs[$i]</option>";
 						}
 					}
 		        }
