@@ -19,8 +19,13 @@
 	$voting = "";
 	$party = "";
 	$region = "";
+        $select_vote = "";
 	//include "../data/config.php";
-	if(isset($_POST["add_candidate"])){
+    if(isset($_POST["select_vote"])) {
+        $voting = pg_escape_string($_POST["voting"]);
+        $select_vote = true;
+    }
+    if(isset($_POST["add_candidate"])){
 		$firstname = pg_escape_string($_POST["firstname"]);
 		$lastname = pg_escape_string($_POST["lastname"]);
 		$voting = pg_escape_string($_POST["voting"]);
@@ -79,8 +84,7 @@
     </form>
         <?php
 
-        if(isset($_POST["select_vote"])){
-            $voting = pg_escape_string($_POST["voting"]);
+        if($select_vote){
 
         ?>
 <form name="create_candidate" method="post" action="">
