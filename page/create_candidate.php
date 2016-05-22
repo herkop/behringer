@@ -32,9 +32,9 @@
 		$voting = pg_escape_string($_POST["voting"]);
 		$party = pg_escape_string($_POST["party"]);
 		$region = pg_escape_string($_POST["region"]);
-		if($firstname && $lastname && $voting && $party){
+		if($firstname && $lastname && $voting && $party && $region){
 		    if($db){
-		        $result = pg_query($db, "INSERT INTO candidate(firstname, lastname, votenumber, voting, party, region) VALUES('" .$firstname."', '" .$lastname. "', nextval('vote_number'), '" .$voting. "', '" .$party."', '".$region."')");
+		        $result = pg_query($db, "INSERT INTO candidate(firstname, lastname, votenumber, voting, party, region) VALUES('" .$firstname."', '" .$lastname. "', nextval('vote_number'), '" .$voting. "', '" .$party."', '".($region-1)."')");
 		        if($result){
 		            $firstname = "";
 		            $lastname = "";
@@ -101,18 +101,18 @@
         <option value="0" <?php if(!$region)echo"selected='selected'"?> disabled="disabled">Vali</option>
         <?php
 		    if($db){
-		        $result = pg_query($db, "SELECT * FROM voting WHERE id='$voting'");
-		        while($row = pg_fetch_assoc($result)){
-		            $id = $row["id"];
-		            $region_text = $row["regions"];;
-					$regs = explode(PHP_EOL, $region_text);
-					for ($i = 0; $i < count($regs); $i++){
+                $result = pg_query($db, "SELECT * FROM voting WHERE id='$voting'");
+                while($row = pg_fetch_assoc($result)){
+                    $id = $row["id"];
+                    $region_text = $row["regions"];;
+                    $regs = explode(PHP_EOL, $region_text);
+                    for ($i = 0; $i < count($regs); $i++){
                         $j = $i + 1;
-						if ($region == $j) {
-							echo "<option value='$j' selected='selected'>$regs[$i] $region</option>";
-						} else {
-							echo "<option value='$j'>$regs[$i]</option>";
-						}
+                        if ($region == $j) {
+                            echo "<option value='$j' selected='selected'>$regs[$i] $region</option>";
+                        } else {
+                            echo "<option value='$j'>$regs[$i]</option>";
+                        }
 					}
 		        }
 		    }

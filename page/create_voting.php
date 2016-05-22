@@ -35,7 +35,7 @@ if(isset($_POST["new_voting"])){
     $finish_date = pg_escape_string($_POST["finish_date"]);
     $finish_time = pg_escape_string($_POST["finish_time"]);
     $regions = pg_escape_string($_POST["regions"]);
-    if($title && $start_date && $start_time && $finish_date && $finish_time) {
+    if($title && $start_date && $start_time && $finish_date && $finish_time && $regions) {
         $start = date("d.m.Y H:i:s", strtotime($start_date . " " . $start_time));
         $finish = date("d.m.Y H:i:s", strtotime($finish_date . " " . $finish_time));
 
