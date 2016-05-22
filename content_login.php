@@ -35,7 +35,7 @@
 				<ul>
 					<li><a href="?page=create_voting">Lisa valimine</a></li>
 					<li><a href="?page=create_candidate">Lisa kandidaat</a></li>
-					<a href="?page=voting">Hääletamine</a>
+					<li><a href="?page=voting">Hääletamine</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -82,9 +82,11 @@
 	<?php }else{ ?>
 	<div id="logininfo">
 		<p>Sisse loginutele:</p>
-			<a href="?page=create_voting">Lisa valimine</a>
-			<a href="?page=create_candidate">Lisa kandidaat</a>
-			<a href="?page=voting">Hääletamine</a>
+		<ul>
+			<li><a href="?page=create_voting">Lisa valimine</a></li>
+			<li><a href="?page=create_candidate">Lisa kandidaat</a></li>
+			<li><a href="?page=voting">Hääletamine</a></li>
+		</ul>
 	</div>
 	<div id="loginfields">
 		<b>Oled sisse loginud, <?php echo $logged_user;?></b>

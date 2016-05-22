@@ -13,7 +13,7 @@
 	echo "<span class='error'>Selle lehe nägemiseks pead olema sisse loginud <a href='?to=voting'>Logi sisse</a></span>";
 }
 	else{
-	include "../data/config.php";
+	//include "../data/config.php";
 	$voting_error = "";
 	if(isset($_POST["vote"])){
 		if($db){
