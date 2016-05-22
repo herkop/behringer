@@ -7,5 +7,5 @@
 	<link rel=StyleSheet href="css/defaultstyle.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <script src="/js/main_min.js"></script>
+    <script src="/js/main.js"></script>
 </head>
