@@ -42,7 +42,7 @@ $stat = $_POST["statistika"];
     <?php
     if ($db&&$voting!="") {
         if($stat == "Piirkond"){
-            $result1 = pg_query($db, "SELECT region, SUM(votes) FROM candidate WHERE voting=6 GROUP BY region");
+            $result1 = pg_query($db, "SELECT region, SUM(votes) FROM candidate WHERE voting=$voting GROUP BY region");
             while ($row = pg_fetch_assoc($result1)) {
                 $region = $row["region"];
                 $sum = $row["sum"];
