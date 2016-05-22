@@ -58,21 +58,24 @@
 	<tr>
 		<td><strong>Nimi</strong></td>
 		<td><strong>Erakond</strong></td>
+		<td><strong>Piirkond</strong></td>
 		<td><strong>Number</strong></td>
 	</tr>
     <?php
 		if ($db&&$voting!="") {
-			$result1 = pg_query($db, "SELECT id, firstname, lastname, voting, votenumber, party FROM candidate WHERE voting=$voting ORDER BY id DESC LIMIT 2");
+			$result1 = pg_query($db, "SELECT id, firstname, lastname, voting, votenumber, party, region FROM candidate WHERE voting=$voting ORDER BY id DESC LIMIT 2");
 			while ($row = pg_fetch_assoc($result1)) {
 				$id = $row["id"];
 				$firstname = $row["firstname"];
 				$lastname = $row["lastname"];
 				$votenumber = $row["votenumber"];
 				$party = $row["party"];
+				$region = $row["region"];
 				$candID = "CD". $voting . "-" . $id;
 				echo "<tr id='$candID' class='candidateList'>
                 		<td>$firstname $lastname</td>
                 		<td>$party</td>
+                		<td>$region</td>
                 		<td>$votenumber</td>
                 	  </tr>";
             }

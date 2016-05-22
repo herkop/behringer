@@ -12,10 +12,12 @@
 		$lastname   = $row['lastname'];
 		$party      = $row['party'];
 		$votenumber = $row['votenumber'];
+		$region     = $row['region'];
 		$candID     = "CD" . $vote[0] . "-" . $id;
 		echo "<tr id='$candID' class='candidateList'>
 				<td>$firstname $lastname</td>
 		    	<td>$party</td>
+		    	<td>$region</td>
 		    	<td>$votenumber</td>
 			  </tr>";
 	}
